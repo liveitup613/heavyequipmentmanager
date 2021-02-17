@@ -154,7 +154,7 @@ header('Expires: 0');
                                     <li><a href="<?php echo base_url('User'); ?>"><?php echo lang('Users');?></a></li>
                                 <?php } ?>
                                 <li><a href="<?php echo base_url('User/redirectToUpdatePasswordPage'); ?>"><?php echo lang('Update Profile');?></a></li>
-                                <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a></li> -->
                                 <?php 
                                     if ($PERMISSION == 'admin') {
                                     echo '<li><a href="'.base_url('User/configuration').'">'.lang('Settings').'</a></li>';
@@ -174,13 +174,13 @@ header('Expires: 0');
                                 <li><a href="<?php echo base_url('Customers');?>"><?php echo lang('Customers');?></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#myPage" class="has-arrow"><i class="icon-basket"></i><span><?php echo lang('Sales');?></span></a>
                             <ul>
                                 <li><a href="<?php echo base_url('Sales'); ?>"><?php echo lang('Sales');?></a></li>
                                 <li><a href="<?php echo base_url('Sales/mine'); ?>"><?php echo lang('My Sales');?></a></li>                                
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

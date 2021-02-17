@@ -188,7 +188,7 @@
                                 <li><a
                                         href="<?php echo base_url('User/redirectToUpdatePasswordPage'); ?>"><?php echo lang('Update Profile');?></a>
                                 </li>
-                                <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a>
+                                <!-- <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a> -->
                                 </li>
                                 <?php 
                                     if ($PERMISSION == 'admin') {
@@ -220,7 +220,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#myPage" class="has-arrow"><i
                                     class="icon-basket"></i><span><?php echo lang('Sales');?></span></a>
                             <ul>
@@ -236,7 +236,7 @@
                                         href="<?php echo base_url('Incentive/mine'); ?>"><?php echo lang('My Incentives');?></a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

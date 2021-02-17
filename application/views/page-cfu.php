@@ -169,7 +169,7 @@
                                 <?php } ?>
                                 <li><a href="<?php echo base_url('User/redirectToUpdatePasswordPage'); ?>">Update
                                         Password</a></li>
-                                <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('Worksheet');?>"><?php echo lang('Worksheet');?></a></li> -->
                                 <?php 
                                     if ($PERMISSION == 'admin') {
                                     echo '<li><a href="'.base_url('User/configuration').'">'.lang('Settings').'</a></li>';
@@ -190,7 +190,7 @@
                                 <li><a href="<?php echo base_url('Customers');?>"><?php echo lang('Customers');?></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#myPage" class="has-arrow"><i class="icon-basket"></i><span><?php echo lang('Sales');?></span></a>
                             <ul>
                                 <li><a href="<?php echo base_url('Sales'); ?>"><?php echo lang('Sales');?></a></li>
@@ -199,7 +199,7 @@
                                 <li><a href="<?php echo base_url('Incentive'); ?>"><?php echo lang('Incentives');?></a></li>
                                 <li><a href="<?php echo base_url('Incentive/mine'); ?>"><?php echo lang('My Incentives');?></a></li>        
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>
