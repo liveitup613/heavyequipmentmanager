@@ -53,7 +53,7 @@
     </style>
 </head>
 
-<body class="theme-cyan font-montserrat" onload='set_interval();'>
+<body class="theme-cyan font-montserrat light_version" onload='set_interval();'>
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -164,13 +164,13 @@
                                         href="<?php echo base_url('Deals/addNewDeal'); ?>"><?php echo lang('Add New Deal');?></a>
                                 </li>
                                 <?php } ?>
-                                <li><a
+                                <!-- <li><a
                                         href="<?php echo base_url('AuctionResults'); ?>"><?php echo lang('Auction Results');?></a>
-                                </li>
+                                </li> -->
                                 <li><a
                                         href="<?php echo base_url('Deals/statistic'); ?>"><?php echo lang('Statistics');?></a>
                                 </li>
-                                <li><a href="<?php echo base_url('Procurement'); ?>"><?php echo lang('Procurement');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('Procurement'); ?>"><?php echo lang('Procurement');?></a></li> -->
                             </ul>
                         </li>
 
@@ -206,8 +206,8 @@
                                 <li><a
                                         href="<?php echo base_url('Opportunities/mine'); ?>"><?php echo lang('My Opportunities');?></a>
                                 </li>
-                                <li><a href="<?php echo base_url('CFU');?>"><?php echo lang('Customer Follow Up');?></a>
-                                </li>
+                                <!-- <li><a href="<?php echo base_url('CFU');?>"><?php echo lang('Customer Follow Up');?></a>
+                                </li> -->
                                 <li><a
                                         href="<?php echo base_url('Leads/statistic'); ?>"><?php echo lang('Statistics');?></a>
                                 </li>

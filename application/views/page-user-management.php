@@ -42,7 +42,7 @@
     </style>
 </head>
 
-<body class="theme-cyan font-montserrat">
+<body class="theme-cyan font-montserrat light_version">
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">

@@ -62,7 +62,7 @@
     </style>
 </head>
 
-<body class="theme-cyan font-montserrat" onload='set_interval();'>
+<body class="theme-cyan font-montserrat light_version" onload='set_interval();'>
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -164,9 +164,9 @@
                                 <?php if ($PERMISSION == 'admin' || $PERMISSION == "editable" || $PERMISSION == 'uploader') { ?>
                                 <li><a href="<?php echo base_url('Deals/addNewDeal'); ?>"><?php echo lang('Add New Deal');?></a></li>
                                 <?php } ?>
-                                <li><a href="<?php echo base_url('AuctionResults'); ?>"><?php echo lang('Auction Results');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('AuctionResults'); ?>"><?php echo lang('Auction Results');?></a></li> -->
                                 <li><a href="<?php echo base_url('Deals/statistic'); ?>"><?php echo lang('Statistics');?></a></li>
-                                <li><a href="<?php echo base_url('Procurement'); ?>"><?php echo lang('Procurement');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('Procurement'); ?>"><?php echo lang('Procurement');?></a></li> -->
                             </ul>
                         </li>
 
@@ -195,7 +195,7 @@
                                 <li><a href="<?php echo base_url('Opportunities'); ?>"><?php echo lang('Opportunities');?></a></li>
                                 <li class='active'><a href="<?php echo base_url('Opportunities/mine'); ?>">My
                                         Opportunities</a></li>
-                                <li><a href="<?php echo base_url('CFU');?>"><?php echo lang('Customer Follow Up');?></a></li>
+                                <!-- <li><a href="<?php echo base_url('CFU');?>"><?php echo lang('Customer Follow Up');?></a></li> -->
                                 <li><a href="<?php echo base_url('Leads/statistic'); ?>"><?php echo lang('Statistics');?></a></li>
                                 <li><a href="<?php echo base_url('Customers');?>"><?php echo lang('Customers');?></a></li>
                             </ul>
