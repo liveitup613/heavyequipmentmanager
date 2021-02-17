@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+application/config
 application/cache
 application/views/auctions/
 application/views/suppliers/
