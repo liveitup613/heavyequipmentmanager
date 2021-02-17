@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<title>Machinery Hunters Platform</title>
+<title>Machinery Hawkers</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -55,13 +55,13 @@
 
 <div class="loading-box"><img src="<?php echo base_url('assets/images/spinner.gif'); ?>" id="pdf-loading"></div>
 
-<div class="auth-main particles_js">    
+<div class="auth-main particles_js" style='background: white;'>    
     <div class="auth_div vivify popIn">
         <div class="auth_brand">
-            <a class="navbar-brand" href="javascript:void(0);">Heavy Equipment Manager</a>
+            <a class="navbar-brand" href="javascript:void(0);" style='color: #007bff;'>Machinery Hawkers</a>
         </div>
         <div class="card">
-            <div class="body">                         
+            <div class="body" style='border-width: 0px'>                         
                 <div class="login-form">
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Username</label>

@@ -359,12 +359,12 @@ function onUndo(ID, TotalDeposit) {
             var data = JSON.parse(res);
 
             if (data.success == false) {
-                toastr.warning('Cancel Procurement Error', 'Machinery Hunters Platform');
+                toastr.warning('Cancel Procurement Error', 'Machinery Hawkers');
                 logErrorActivity('Cancel Procurement', ID, 'tblprocurement', 'Cancel Procurement Error');
                 return;
             }
 
-            toastr.success('Cancel Procurement', 'Machinery Hunters Platform');
+            toastr.success('Cancel Procurement', 'Machinery Hawkers');
             logSuccessActivity('Cancel Procurement', ID, 'tblprocurement');
             refreshDatatable(false);
         }
@@ -422,7 +422,7 @@ function onPricingInfo(ID) {
             hiddenSpinner();
             var data = JSON.parse(res);
             if (data.success == true) {
-                toastr.error('Get Procurement Error', 'Machinery Hunters Platform');
+                toastr.error('Get Procurement Error', 'Machinery Hawkers');
             }
 
             var procurement = data.procurement;
@@ -459,12 +459,12 @@ $('#btnPricingInfoSave').click(function() {
             var data = JSON.parse(res);
 
             if (data.success == false) {
-                toastr.warning('Update Pricing Info Error', 'Machinery Hunters Platform');
+                toastr.warning('Update Pricing Info Error', 'Machinery Hawkers');
                 logErrorActivity('Update Pricing Info', ID, 'tblprocurement', 'Update Pricing Info Error');
                 return;
             }
 
-            toastr.success('Update Pricing Info', 'Machinery Hunters Platform');
+            toastr.success('Update Pricing Info', 'Machinery Hawkers');
             logSuccessActivity('Update Pricing Info', ID, 'tblprocurement');
             refreshDatatable(false);
         }
@@ -521,7 +521,7 @@ function ShowHideExchangePanel(){
                 var data = JSON.parse(res);
     
                 if (data.success == false) {
-                    toastr.error(data.message, 'Machinery Hunters Platform');
+                    toastr.error(data.message, 'Machinery Hawkers');
                     return;
                 }
     
@@ -579,13 +579,13 @@ $('#btnDeposit').click(function() {
                 if (data.message == 'Limited Deposit')
                     toastr.error(LocalizationMessage('Deposit exceeds Remaining Error'));
                 else
-                    toastr.error(LocalizationMessage('Add Deposit') + ' Error', 'Machinery Hunters Platform');
+                    toastr.error(LocalizationMessage('Add Deposit') + ' Error', 'Machinery Hawkers');
                 logErrorActivity('Add Deposit', ID, 'tblProcurement', data.message);
                 return;
             }
 
             $('#DepositModal').modal('hide');
-            toastr.success(LocalizationMessage('Add Deposit'), 'Machinery Hunters Platform');
+            toastr.success(LocalizationMessage('Add Deposit'), 'Machinery Hawkers');
             logSuccessActivity('Add Deposit', ID, 'tblProcurement');
             websocket.send(JSON.stringify({ 'msg': 'sales', 'poster': $('#usernameInput').val() }));
             refreshDatatable();
@@ -617,7 +617,7 @@ function onDepositHistory(ID, SalesCurrency, TotalDeposit) {
             var data = JSON.parse(res);            
 
             if (data.success == false) {
-                toastr.error(data.message, 'Machinery Hunters Platform');
+                toastr.error(data.message, 'Machinery Hawkers');
                 return;
             }
 
@@ -630,7 +630,7 @@ function onDepositHistory(ID, SalesCurrency, TotalDeposit) {
             $('#DepositHistoryModal').modal('show');
         },
         error : function() {
-            toastr.error('Get Deposit Error', 'Machinery Hunters Platform');
+            toastr.error('Get Deposit Error', 'Machinery Hawkers');
             hiddenSpinner();
         }
     });
@@ -669,7 +669,7 @@ function showDepositHistory(index) {
             var data = JSON.parse(res);
 
             if (data.success == false) {
-                toastr.error(data.message, 'Machinery Hunters Platform');
+                toastr.error(data.message, 'Machinery Hawkers');
                 return;
             }           
 
@@ -693,7 +693,7 @@ function showDepositHistory(index) {
             $('.depositHistoryPanel').html(html);
         },
         error : function() {
-            toastr.error('Get Deposit Data Eror', 'Machinery Hunters Platform');
+            toastr.error('Get Deposit Data Eror', 'Machinery Hawkers');
             hiddenSpinner();
         }
     });
@@ -705,7 +705,7 @@ function receiptDownload(receipt, ID) {
     $(newElement)[0].click();
 
     var ID = $('#edit-item-id').val();
-    toastr.success(LocalizationMessage('Download Deposit Picture'), 'Machinery Hunters Platform');
+    toastr.success(LocalizationMessage('Download Deposit Picture'), 'Machinery Hawkers');
     logSuccessActivity('Download Deposit Picture', ID, 'tblSales');
 }
 
@@ -773,12 +773,12 @@ $('#btnDepositEdit').click(function() {
 
             hiddenSpinner();
             if (data.success == false) {
-                toastr.error(LocalizationMessage('Edit Deposit') + ' Error', 'Machinery Hunters Platform');
+                toastr.error(LocalizationMessage('Edit Deposit') + ' Error', 'Machinery Hawkers');
                 logErrorActivity('Edit Deposit', ID, 'tblSales', data.message);
                 return;
             }
 
-            toastr.success(LocalizationMessage('Edit Deposit'), 'Machinery Hunters Platform');
+            toastr.success(LocalizationMessage('Edit Deposit'), 'Machinery Hawkers');
             logSuccessActivity('Edit Deposit', ID, 'tblSales');
             websocket.send(JSON.stringify({ 'msg': 'sales', 'poster': $('#usernameInput').val() }));
 
@@ -931,11 +931,11 @@ $('#DocumentUpload').click(function() {
         dataType: "json",        
         success : function(data) {
             if (data.success == true){
-                toastr.success("Upload Document", 'Machinery Hunters Platform');                
+                toastr.success("Upload Document", 'Machinery Hawkers');                
                 onDocuments(ID);
             }
             else {
-                toastr.warning(data.message, 'Machinery Hunters Platform');                
+                toastr.warning(data.message, 'Machinery Hawkers');                
             }
         }
     })
@@ -958,15 +958,15 @@ function deleteDocument(ID) {
                 var data = JSON.parse(res);
 
                 if (data.success == true) {
-                    toastr.success("Delete Document", "Machinery Hunters Platform");
+                    toastr.success("Delete Document", "Machinery Hawkers");
                     onDocuments(procurementID);
                     return;
                 }
-                toastr.warning("Delete Document", "Machinery Hunters Platform");
+                toastr.warning("Delete Document", "Machinery Hawkers");
             },
             error: function(err) {
                 hiddenSpinner();
-                toastr.error("Delet Document", 'Machinery Hunters Platform');
+                toastr.error("Delet Document", 'Machinery Hawkers');
             }
         })
     }
@@ -987,7 +987,7 @@ function onInventory(DealID) {
             var data = JSON.parse(res);
 
             if (data.success == false) {
-                toastr.error('Make Inventory Error', 'Machinery Hunters Platform');
+                toastr.error('Make Inventory Error', 'Machinery Hawkers');
                 logErrorActivity('Make Inventory', DealID, 'tblDeals', 'Make Inventory Error');
                 return;
             }

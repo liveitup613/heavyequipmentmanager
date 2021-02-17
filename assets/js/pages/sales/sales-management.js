@@ -2138,12 +2138,12 @@ $('#DocumentUpload').click(function() {
         dataType: "json",        
         success : function(data) {
             if (data.success == true){
-                toastr.success("Upload Document", 'Machinery Hunters Platform');                
+                toastr.success("Upload Document", 'Machinery Hawkers');                
                 logSuccessActivity('Upload Document', ID, 'tblSales');
                 onDocuments(ID);
             }
             else {
-                toastr.warning(data.message, 'Machinery Hunters Platform');                
+                toastr.warning(data.message, 'Machinery Hawkers');                
                 logErrorActivity('Upload Document Error', ID, 'tblSales', 'Upload Document Error');
             }
         }
@@ -2167,15 +2167,15 @@ function deleteDocument(ID) {
                 var data = JSON.parse(res);
 
                 if (data.success == true) {
-                    toastr.success("Delete Document", "Machinery Hunters Platform");
+                    toastr.success("Delete Document", "Machinery Hawkers");
                     onDocuments(procurementID);
                     return;
                 }
-                toastr.warning("Delete Document", "Machinery Hunters Platform");
+                toastr.warning("Delete Document", "Machinery Hawkers");
             },
             error: function(err) {
                 hiddenSpinner();
-                toastr.error("Delet Document", 'Machinery Hunters Platform');
+                toastr.error("Delet Document", 'Machinery Hawkers');
             }
         })
     }
@@ -2196,7 +2196,7 @@ function onSaleDocument(ID) {
 
             if (data.success == false) {
                 hiddenSpinner();
-                toastr.error("Get Sale Document", "Machinery Hunters Platform");
+                toastr.error("Get Sale Document", "Machinery Hawkers");
                 return;
             }
             var full = data.sale;
@@ -2364,7 +2364,7 @@ function onSaleDocument(ID) {
         },
         error : function(err) {
             hiddenSpinner();
-            toastr.error("Get Sale Document", "Machinery Hunters Platform");
+            toastr.error("Get Sale Document", "Machinery Hawkers");
         }
     })
 }
@@ -2384,7 +2384,7 @@ function onDepsoitDocument(ID) {
 
             if (data.success == false) {
                 hiddenSpinner();
-                toastr.error("Get Sale Document", "Machinery Hunters Platform");
+                toastr.error("Get Sale Document", "Machinery Hawkers");
                 return;
             }
 
@@ -2604,16 +2604,16 @@ $('#btnChangeSalesRep').click(function() {
             var data = JSON.parse(res);
 
             if (data.success == false) {
-                toastr.warning('Change Sales Rep', 'Machinery Hunters Platform');
+                toastr.warning('Change Sales Rep', 'Machinery Hawkers');
                 return;
             }
 
-            toastr.success('Changes Sales Rep', 'Machinery Hunters Platform');
+            toastr.success('Changes Sales Rep', 'Machinery Hawkers');
             refreshDatatable(false);
         },
         error: function(err) {
             hiddenSpinner();
-            toastr.error('Change Sales Rep', 'Machinery Hunters Platform');
+            toastr.error('Change Sales Rep', 'Machinery Hawkers');
         }
     })
 })

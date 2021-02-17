@@ -7,11 +7,11 @@
 <html lang="en">
 
 <head>
-    <title>Machinery Hunters Platform</title>
+    <title>Machinery Hawkers</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="description" content="Machinery Hunters Platform">
+    <meta name="description" content="Machinery Hawkers">
     <meta name="keywords"
         content="admin template, Oculux admin template, dashboard template, flat admin template, responsive admin template, web app, Light Dark version">
     <meta name="author" content="GetBootstrap, design by: puffintheme.com">
@@ -127,7 +127,7 @@
         <div id="left-sidebar" class="sidebar">
             <div class="navbar-brand">
                 <a href=""><img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Oculux Logo"
-                        class="img-fluid logo"><span class="sidebar-logo-title">Machinery Hunters Platform</span></a>
+                        class="img-fluid logo"><span class="sidebar-logo-title">Machinery Hawkers</span></a>
                 <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i
                         class="lnr lnr-menu icon-close"></i></button>
             </div>
