@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+application/cache
+application/views/auctions/
+application/views/suppliers/
+assets/images/
+assets/doc/
+assets/js/pages/auctions/
+assets/js/pages/suppliers/
+assets/css/auctions/
+assets/css/suppliers/
+/vendor
+
+composer.lock
+
+user_guide_src/build

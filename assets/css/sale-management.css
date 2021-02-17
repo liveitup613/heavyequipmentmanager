@@ -1,0 +1,274 @@
+.SaleDocument {
+    width: 800px;
+    height: 1131px;
+    background: white;    
+    color: black;
+    position: absolute;
+    left: 3000px;
+    z-index: 100;
+    display: none;
+}
+
+.SaleDocument p {
+    font-family: Bebas Neue;
+    font-weight: 400;    
+    margin-bottom: 0px;
+}
+
+.SaleDocument .header {
+    text-align: left;    
+}
+
+.SaleDocument .header .logo{
+    padding: 14px 11px;
+    border: 0px solid #154c89;
+    border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.SaleDocument .header .logo img {
+    width: 263px;
+}
+
+.SaleDocument .header .detail {
+    padding: 8px 16px;
+    border: 0px solid #FF8000;
+    border-top-width: 3px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SaleDocument .header .detail .title {
+    font-size: 50px;
+    font-weight: 400;
+    color: #154c89;
+    padding-left: 20px;
+}
+
+.SaleDocument .header .detail .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.SaleDocument .header .detail .info .date,
+.SaleDocument .header .detail .info .sale-code {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25px;
+}
+
+.SaleDocument .header .detail .info .title {
+    font-size: 23px;
+    font-weight: 400;
+    width: 60px;
+    padding: 0px;
+    color: #FF8000;
+}
+
+.SaleDocument .header .detail .info .content {
+    font-size: 23px;
+    font-weight: 400;
+    padding: 0px;
+    color: #154c89;
+}
+
+
+.SaleDocument .client-info,
+.SaleDocument .equipment-info, 
+.SaleDocument .deal-info {
+    border: 0px solid #FF8000;
+    border-top-width: 2px;
+}
+
+.SaleDocument .client-info .title,
+.SaleDocument .equipment-info .title,
+.SaleDocument .deal-info .title {
+    padding: 4px;    
+    font-size: 35px;    
+    color: #154c89;
+    padding-left: 36px;
+    border: 2px solid #FF8000;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    width: 255px;
+    border-bottom-right-radius: 20px;
+    height: 43px;
+    line-height: 35px;
+}
+
+.SaleDocument .client-info .content {
+    height: 106px;
+    padding: 8px 0px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.SaleDocument ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    height: 100%;
+    list-style-type: none;
+    padding-left: 36px;
+}
+
+.SaleDocument .client-info .content ul li {
+    width: 275px;
+}
+
+.SaleDocument .client-info .content ul li::before {
+    content: url('../list-icon.svg');
+    margin-right: 4px;
+}
+
+.SaleDocument .equipment-info .content {
+    height: 352px;
+    padding: 16px;
+}
+
+.SaleDocument .equipment-info .content{
+    display: flex;
+}
+
+.SaleDocument .equipment-info .portfolio {
+    margin-right: 16px;
+}
+
+.SaleDocument .equipment-info .portfolio .photo-cell{
+    width: 391px;
+    height: 318px;
+}
+
+.SaleDocument .equipment-info .content #equipment-content {
+    height: 203px;
+}
+
+.SaleDocument .equipment-info .content #equipment-content ul {
+    list-style-type: none;
+    list-style-image: none;
+    padding-left: 0px;
+}
+
+.SaleDocument .equipment-info .content #equipment-content ul li {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.SaleDocument .equipment-info .content .observation {
+    padding: 4px;
+    border: 2px solid #154c89;
+    width: 365px;
+    height: 115px;
+}
+
+.SaleDocument .equipment-info .content .observation p {
+    font-size: 23px;
+    color: #154c89;
+    font-weight: 400;
+}
+
+.SaleDocument .deal-info .content
+{
+    height: 123px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.SaleDocument .deal-info .content #deal-content {
+    width: 724px;
+    margin-top: 4px;
+    padding: 0px 0px 0px 0px;
+    height: 119px;
+}
+
+.SaleDocument .deal-info .content #deal-content ul li {
+    font-size: 12px;
+    font-weight: 600;
+    width: 230px;
+}
+
+.SaleDocument .deal-info .content #deal-content ul li::before {
+    content: url('../list-icon.svg');
+    margin-right: 4px;
+}
+
+.SaleDocument .deal-info .content .total-price {
+    position: absolute;
+    right: 0px;
+    height: 43px;
+    border: 2px solid #FF8000;
+    width: 347px;
+    border-right-width: 0px;
+    border-bottom-left-radius: 20px;
+    padding-top: 3px;
+    padding-left: 20px;
+    font-size: 35px;
+    line-height: 35px;
+    color: #FF8000;
+}
+
+.SaleDocument .deal-info .content .total-price span {
+    font-size: 38px;
+    color: #154c89;
+}
+
+.SaleDocument .signature {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.SaleDocument .signature > div {
+    width: 155px;
+    text-align: center;
+}
+
+.SaleDocument .signature .sign {
+    height: 117px;
+    border-bottom: 2px solid #FF8000;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.SaleDocument .signature #sale-rep-sign {
+    font-family: OriflameScript;
+    font-size: 35px;
+    color: black;
+}
+
+.SaleDocument .signature .name {
+    padding: 4px;
+    font-size: 25px;    
+    line-height: 28px;
+    color: #FF8000;
+}
+
+.SaleDocument .footer {
+    margin-top: 10px;
+    padding: 4px 20px;
+    border: 0px solid #FF8000;
+    border-bottom-width: 5px;
+
+}
+
+.SaleDocument .footer p {
+    font-size: 15px;
+    font-weight: 200;
+    color: #154c89;
+    line-height: 17px;
+}
+
+.SaleDocument .line{
+    width: 100%;
+    height: 5px;
+    background-color: #154c89;
+}

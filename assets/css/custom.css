@@ -1,0 +1,9 @@
+
+.card .card-selected {
+    background : #3c4046;
+}
+
+.customer-avatar {
+    width: 128px;
+    height: 128px;
+}

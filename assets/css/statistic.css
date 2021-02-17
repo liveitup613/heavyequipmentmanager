@@ -1,0 +1,96 @@
+.preview {
+    font-size: 18px !important;
+    color: ghostwhite;
+}
+
+.loading-box{
+    position: fixed;
+    display: none;
+    top:0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(0, 0,0, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+#pdf-loading {
+    width: 50px;
+    height: 50px;
+}
+
+#loading{
+    width: 50px;
+    height: 50px;
+}
+
+.category-tab> li,
+.user-tab> li{
+    cursor: pointer;
+}
+.imageSelecionMessage{
+    color: red;
+    text-align: center;
+}
+
+.select-container{
+    padding: 5px;
+    border-bottom: 1px solid 
+}
+.datepicker-box{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#startDate, #endDate, #startUserDate, #endUserDate{
+    display: inline-block;
+}
+
+#startDate, #endDate, 
+#startOppDate, #endOppDate,
+#startLeadsDate, #endLeadsDate, 
+#oppStatusStartDate, #oppStatusEndDate, 
+#userStartDate, #userEndDate,
+#directOppStartDate, #directOppEndDate {
+    display: inline-block;
+}
+
+#DealsTypeStartDate, #DealsTypeEndDate,
+#EqCategoryStartDate, #EqCategoryEndDate,
+#OppEqCategoryStartDate, #OppEqCategoryEndDate,
+#SurveyStartDate, #SurveyEndDate,
+#MasterStartDate, #MasterEndDate,
+#AssignStageStartDate, #AssignStageEndDate,
+#PointsStartDate, #PointsEndDate,
+#DealsByDealTypeStartDate, #DealsByDealTypeEndDate,
+#DealsByEquipmentCategoryStartDate, #DealsByEquipmentCategoryEndDate,
+#AssignDetailStartDate, #AssignDetailEndDate
+ { 
+    display : inline-block;
+}
+
+.CustomerDatePicker {
+    display: inline-block;
+}
+
+.progress.progress-xxs {
+    height : 2px;
+}
+
+@media screen and (max-width : 1200px) {
+    .offcanvas-active #left-sidebar .sidebar-logo-title {
+        display: inline-block!important;
+    }
+
+    #left-sidebar .sidebar-logo-title {
+        display: none!important;
+    }
+    
+}  
+
+@media screen and (max-width: 1823px) {
+    .truck-table-container {
+        width: 1550px!important;
+    }
+}

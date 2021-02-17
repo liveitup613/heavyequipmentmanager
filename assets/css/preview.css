@@ -1,0 +1,239 @@
+#content {
+    padding: 0px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.preview-content .modal-content {
+    background: rgb(47, 51, 56);
+    border-radius: 5px;
+    width: 850px;
+    max-width: 850px;
+}
+
+#content .row > div {
+    margin: auto;
+}
+
+.modal-header, .modal-footer {
+    border-color: #606060;
+    justify-content: left;
+}
+
+#preview-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+input#title-box {
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: rgb(119, 121, 124);
+    border-color: rgb(57, 61, 66);
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    width: 100%;
+    transition: border-color .15s
+}
+
+textarea#des-box {
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: rgb(119, 121, 124);
+    border-color: rgb(57, 61, 66);
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    width: 100%;
+    min-height: 100px;
+    transition: border-color .15s
+}
+
+.modal-body .row {
+    padding: 15px 0px 0px 0px;
+}
+
+.maquinaria_active{
+    background-image : url('../images/publish_icon/maquinaria_active.png');
+    background-size: 30px 30px;
+    width : 45px;
+    height : 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.maquinaria_deactive{
+    background-image : url('../images/publish_icon/maquinaria_deactive.png');
+    background-size: 30px 30px;
+    width : 45px;
+    height : 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.loading-box{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-box > img {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+}
+
+#btnPublishToMaqui {
+    margin: 0px 2px 5px 2px;
+    border-radius: 5px;
+}
+
+.galleryCell {
+    width: 150px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.galleryCell .modal-photo-cell {
+    width: 150px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
+.galleryCell .modal-banner1 {
+    position: absolute;
+    z-index: 0;
+    top: 100px;
+    left: 15px;
+    width: 140px;
+    height: auto;
+    opacity: 0;
+}
+
+.galleryCell .modal-banner2 {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+    visibility: visible;
+}
+
+.pdfPage-footer {
+    width: 760px;
+    height: 10px;
+    border-top: 6px solid #134a88;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.pdfPage-content {
+    width: 760px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.pdfPage {
+    width: 800px;
+    height: auto;
+    padding: 7px 5px 0px 5px;
+    background: white;
+    margin: 10px auto;
+    box-shadow: 3px 3px rgba(0,0,0, 0.5);
+    border: 5px solid #f68320;
+}
+
+.first-pdf-page-gallery-container {
+    display: flex;
+    width: 700px;
+    /* height: 630px; */
+    margin: 10px auto;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.pdf-description-content-box {
+    width: 100%;
+    height: 90px;
+    border: 3px solid #134A88;
+    border-right-width: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 4px 20px;
+    flex-wrap: wrap;
+}
+
+.pdf-header-icon-box {
+    margin-right: 10px;
+}
+
+.modal-photo-cell {
+    border-radius: 3px;
+}
+
+.item-text {
+    padding: 10px;
+}
+
+.share-item {
+    width: 800px;
+    margin: auto;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 2px 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    color: white;
+    text-decoration: none;
+}
+
+.preview-content .modal-body {
+    padding: 0rem 1rem 1rem 1rem;
+}

@@ -1,0 +1,52 @@
+
+#imgProfile {
+    width : 160px;
+    height: 160px;
+}
+
+#editImgProfile {
+    width : 160px;
+    height: 160px;
+}
+
+.user-profile-img {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.old-pass-panel {
+    width: 400px;
+}
+
+.update-profile-panel {
+    width: 400px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+     background-color: transparent; 
+    opacity: 0.6;
+    cursor: no-drop;
+}
+
+button:disabled{
+    opacity: 0.4;
+    cursor: no-drop;
+}
+
+@media screen and (max-width : 1200px) {
+    .offcanvas-active #left-sidebar .sidebar-logo-title {
+        display: inline-block!important;
+    }
+
+    #left-sidebar .sidebar-logo-title {
+        display: none!important;
+    }
+}

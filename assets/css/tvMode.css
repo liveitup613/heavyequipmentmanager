@@ -1,0 +1,240 @@
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+  #TVPanel{   
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #282b2f;
+    transition : all ease-in-out 0.5s;
+    padding: 2.5% 2.5%;
+  }
+
+  #TVMainPanel{  
+      height: 100%;  
+      display: flex;
+      justify-content: space-between;      
+      padding: 2.5% 2.5%;
+      position: relative;
+      border: 1px solid #2f3338;
+      overflow: hidden;
+  }
+
+  #imageTvMainPanel-container{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#imageTvMainPanel{
+    width: 90%;
+    position: relative;   
+    padding-top: 67.5%;         
+}
+#auto-setting{
+    width: 85px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    bottom: 8px;
+    background: transparent;
+    border: 1px solid #a5a8ad;      
+    text-shadow: 0 1px 0 #2F4C63;
+    color:#a5a8ad;
+    font-size: 15px;
+}
+
+    #auto-setting>option{
+        background-color: #282b2f;
+    }
+
+    .imageTvSlider-box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;    
+    }
+
+    .flex-control-nav{
+        display: none;
+    }
+    .flexslider{
+        height: 100%;
+    }
+    .flexslider .slides{
+        display: block;
+        height: 100%
+    }
+    .flexslider .slides > li{
+        position: relative;
+        width: 100%; 
+        height: 100%;
+    }
+  
+#detailTvMainPanel{
+    width: 40%;     
+    font-family: Oswald;    
+    position: relative;    
+}
+    .tvmode-translate {    
+        margin: 0 0 10px;
+        text-shadow: 0 1px 0 #2F4C63;
+        color: #fff;
+        font-size: 3vw;
+        font-weight: bolder; 
+        text-align: center;
+    }
+
+    .tvmode-hr {
+        height : 10px;
+        background:  #FF7F27;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .tvmode-title-block {
+        border-style: solid;
+        border-width: 4px;
+        border-color: white;
+        margin-left: 4.5%;
+        margin-right: 4.5%;
+        margin-top: 20px;
+        margin-bottom: 3%;
+        padding:2%;
+    }
+
+    
+    .tvmode-title {      
+        margin: 0 0 10px;
+        text-shadow: 0 1px 0 #2F4C63;
+        color: #fff;
+        font-size: 3vw;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .tvmode-item{
+        width: 370px;
+        display: inline-block;
+        margin: 5px 0 ;      
+        text-shadow: 0 1px 1px #555;
+        color: #fff;
+        font-weight: bolder;
+    }
+
+    .tvmode-detail-container{
+        width: 100%;  
+    }  
+
+        .tvmode-detail-box{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            align-content: flex-start;
+            padding: 1.5% 4.5%;
+            font-size: 2vw;
+            flex-wrap: wrap;
+            max-height: 250px;
+        }
+
+        #tvmode-detail-price{
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 10px;
+            flex-wrap: wrap;        
+            position: absolute;
+            bottom: 30px;
+        }
+            .tvmode-price-item{
+                margin: 0px 30px;    
+                text-shadow: 0 1px 1px #555;
+                color: #fff;
+            }
+            
+            .tvmode-detail-label{    
+                text-shadow: 0 1px 1px #555;
+                color: rgb(177, 169, 169);
+            }
+            
+            .tvmode-price-label {
+                font-size: 2vw;
+                color: #FF7F27;
+                font-weight: bolder;
+            }
+            
+            .tvmode-price-data {
+                font-size: 2vw;
+                text-align: center;
+                color : white;
+                font-weight: bolder;
+            }
+
+
+.flex-viewport{
+    width: 100%;
+    height: 100% !important; 
+}
+
+
+
+
+
+
+.loading-box{
+    position: fixed;
+    display: none;
+    top:0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(0, 0,  0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#loading{
+    width: 80px;
+    height: 80px;
+}
+
+#image-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-tv-mode-image-box{
+  
+    height: 100%;
+    width: 100%;     
+    position: relative;    
+    display: flex;
+    justify-content: center; 
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-position: center center; 
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+ }
+  
+.main-tv-mode-image{    
+    height: 100%;  
+    width: auto;
+    margin: 0 auto;
+}
+.flex-caption{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom : 0;
+}
+

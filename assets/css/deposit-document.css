@@ -1,0 +1,281 @@
+.DepositDocument {
+    width: 800px;
+    height: 1131px;
+    background: white;    
+    color: black;
+    position: absolute;
+    left: 2000px;
+    z-index: 100;
+    display: none;
+}
+
+.DepositDocument p {
+    font-family: Bebas Neue;
+    font-weight: 400;    
+    margin-bottom: 0px;
+}
+
+.DepositDocument ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    height: 100%;
+    list-style-type: none;
+    padding-left: 16px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.DepositDocument ul li::before {
+    content: url('../list-icon.svg');
+    margin-right: 4px;
+    
+}
+
+
+.DepositDocument .header {
+    text-align: left;    
+}
+
+.DepositDocument .header .logo{
+    padding: 14px 11px;
+    border: 0px solid #154c89;
+    border-bottom-width: 4px;
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+.DepositDocument .header .logo img {
+    width: 203px;
+}
+
+.DepositDocument .header .detail {
+    padding: 8px 16px;
+    border: 0px solid #FF8000;
+    border-top-width: 5px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DepositDocument .header .detail .title {
+    font-size: 35px;
+    font-weight: 400;
+    color: #154c89;
+}
+
+.DepositDocument .header .detail .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.DepositDocument .header .detail .info .date {
+    margin-right: 32px;
+}
+
+.DepositDocument .header .detail .info .date,
+.DepositDocument .header .detail .info .sale-code {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25px;
+}
+
+.DepositDocument .header .detail .info .title {
+    font-size: 23px;
+    font-weight: 400;
+    width: 60px;
+    padding: 0px;
+    color: #FF8000;
+}
+
+.DepositDocument .header .detail .info .content {
+    font-size: 23px;
+    font-weight: 400;
+    padding: 0px;
+    color: #154c89;
+}
+
+.DepositDocument .info-panel {
+    border: 0px solid #FF8000;
+    border-top-width: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.DepositDocument .info-panel .tile {
+    width: 50%;
+    border: 0px solid #FF8000;
+}
+
+.DepositDocument .info-panel .tile .content {
+    padding: 8px 16px;
+}
+
+.DepositDocument .info-panel .client,
+.DepositDocument .info-panel .equip {
+    height: 200px;
+}
+
+.DepositDocument .info-panel .client {    
+    border-right-width: 1px;
+    border-left-width: 0px;
+}
+
+.DepositDocument .info-panel .equip {    
+    border-left-width: 1px;    
+}
+
+.DepositDocument .info-panel .tile .title {
+    padding: 8px 16px;    
+    color: #154c89;
+    font-size: 25px;
+    height: 40px;
+    line-height: 25px;
+    width: 120px;
+    border: 0px solid #FF8000;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-bottom-right-radius: 25px;
+}
+
+.DepositDocument .info-panel .deal {
+    height: 200px;
+}
+.DepositDocument .info-panel .deal .content {
+    height: 156px;
+}
+
+.DepositDocument .info-panel .price {
+    padding-left: 16px;
+    padding-bottom: 32px;
+}
+
+.DepositDocument .info-panel .price .content {
+    border: 2px solid #FF8000;
+    border-right-width: 0px;
+    border-bottom-left-radius: 25px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 36px;
+    font-size: 25px;
+    color: #154c89;
+    line-height: 25px;
+}
+
+.DepositDocument .info-panel .price .content .name {
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+    color: #FF8000;
+}
+
+.DepositDocument .info-panel .deal li {
+    width: 200px;
+}
+
+.DepositDocument .deposit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.DepositDocument .deposit .title {
+    width: 300px;
+    border: 0px solid #FF8000;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 40px;
+    font-size: 25px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #154c89;
+}
+
+.DepositDocument .deposit .content {
+    height: 463px;
+    width: 100%;
+}
+
+
+.DepositDocument table td,
+.DepositDocument table th {    
+    border: 2px solid #FF8000;
+    border-right-width: 0px;
+}
+
+.DepositDocument table td {
+    border-top-width: 0px;
+}
+
+.DepositDocument table th {
+    padding: 4px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.DepositDocument table td {
+    padding: 4px;
+    text-align: center;
+    height: 38px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.DepositDocument table th:first-child,
+.DepositDocument table td:first-child {
+    border-left-width: 0px;
+}
+
+.DepositDocument table th:last-child,
+.DepositDocument table td:last-child {
+    border-right-width: 0px;
+}
+
+.DepositDocument table thead {
+    width: 100%;
+}
+
+.DepositDocument table thead th {
+    width: 10%;
+}
+
+.DepositDocument table .concept {
+    width: 40%;
+    text-align: left;
+}
+
+.DepositDocument .footer {
+    margin-top: 10px;
+    padding: 4px 20px;
+    border: 0px solid #FF8000;
+    border-bottom-width: 5px;
+
+}
+
+.DepositDocument .footer p {
+    font-size: 15px;
+    font-weight: 200;
+    color: #154c89;
+    line-height: 17px;
+}
+
+.DepositDocument .line{
+    width: 100%;
+    height: 5px;
+    background-color: #154c89;
+}
