@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // http://8c1ab5d2.ngrok.io/Toilet/Work
-$config['base_url'] = 'http://www.heavyequipmentmanager.localhost/';   
+$config['base_url'] = 'http://www.heavyequipmentmanager.co/';   
 
 /*
 |--------------------------------------------------------------------------
