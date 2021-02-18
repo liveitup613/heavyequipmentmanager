@@ -291,8 +291,6 @@ header('Expires: 0');
                                                 <option value="All Deals"><?php echo lang('All Deals');?></option>
                                                 <option value="Auction"><?php echo lang('Auction');?></option>
                                                 <option value="For Sale"><?php echo lang('For Sale');?></option>
-                                                <option value="Consignment"><?php echo lang('Consignment');?></option>
-                                                <option value="Inventory"><?php echo lang('Inventory');?></option>
                                             </select>                                                                                  
                                         </div>
                                         <div class='auction-search-group' style='width: 430px;'>
