@@ -910,7 +910,7 @@ class Deals extends CI_Controller
             return;
         }
 
-        $this->db->set('DealID', 'concat("MH", LPAD(ID, 6, "0"))', false);
+        $this->db->set('DealID', 'concat("HK", LPAD(ID, 6, "0"))', false);
         $this->db->where('ID', $getID);
         $this->db->update('tblDeals');
 

@@ -7,7 +7,7 @@ header('Expires: 0');
 <html lang="en">
 
 <head>
-    <title>Machinery Hawkers</title>
+    <title>HEM</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -112,7 +112,7 @@ header('Expires: 0');
 
         <div id="left-sidebar" class="sidebar">
             <div class="navbar-brand">
-                <a href=""><img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Oculux Logo" class="img-fluid logo"><span class="sidebar-logo-title">Machinery Hawkers</span></a>
+                <a href=""><img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Oculux Logo" class="img-fluid logo"><span class="sidebar-logo-title">HEM</span></a>
                 <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
             </div>
             <div class="sidebar-scroll">
@@ -218,9 +218,7 @@ header('Expires: 0');
                                                     <div class="input-group mb-3">
                                                         <select class="custom-select" id="inputDealType" name="DealType" onchange="onChangeDealType()">
                                                             <option value="Auction"><?php echo lang('Auction');?></option>
-                                                            <option value="For Sale"><?php echo lang('For Sale');?></option>
-                                                            <option value="Consignment"><?php echo lang('Consignment');?></option>
-                                                            <option value="Inventory"><?php echo lang('Inventory');?></option>                                                           
+                                                            <option value="For Sale"><?php echo lang('For Sale');?></option>                                                            
                                                         </select>
                                                     </div>
                                                 </div>

@@ -825,7 +825,7 @@ function renderModalTB() {
                                 
                                 contentItem += '<div class="pdf-price-box">';
                                 contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Vent</div>';
+                                contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ VentA</div>';
                                 contentItem += '</div>';
                                 contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
                                 
@@ -1841,7 +1841,7 @@ function renderPublishModal(DealID) {
                                         
                                         contentItem += '<div class="pdf-price-box">';
                                         contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                        contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Vent</div>';
+                                        contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ VentA</div>';
                                         contentItem += '</div>';
                                         contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
                                         

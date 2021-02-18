@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<title>Machinery Hawkers</title>
+<title>HEM</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -58,7 +58,7 @@
 <div class="auth-main particles_js" style='background: white;'>    
     <div class="auth_div vivify popIn">
         <div class="auth_brand">
-            <a class="navbar-brand" href="javascript:void(0);" style='color: #007bff;'>Machinery Hawkers</a>
+            <a class="navbar-brand" href="javascript:void(0);" style='color: #007bff;'>Heavy Equipment Manager</a>
         </div>
         <div class="card">
             <div class="body" style='border-width: 0px'>                         

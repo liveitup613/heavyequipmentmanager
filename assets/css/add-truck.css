@@ -174,3 +174,7 @@ textarea.preview {
         display: none!important;
     }
 }
+
+.wizard_validation .body {
+    border-width: 0px!important;
+}
