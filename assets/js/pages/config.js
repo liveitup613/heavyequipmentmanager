@@ -259,7 +259,7 @@ var Tranlate_word_array = [
     { english: 'Replacements', spanish: "Refacciones"},
     { english: 'Towable', spanish: 'Remolcable' },
     { english: 'Auction', spanish: 'Subasta' },
-    { english: 'Supplier', spanish: 'Proveedor' },
+    { english: 'For Sale', spanish: 'Proveedor' },
     { english: 'Consignment', spanish: 'Consignación' },
     { english: 'Inventory', spanish: 'Inventario' },
     { english: 'Manufacturing Dump Truck', spanish: 'Fabricación Camión Volteo'},
@@ -597,7 +597,7 @@ var Common_field_array = [
         price_element: ['Price', 'Shipping', 'Customs', 'Commission', 'BuyPremium'],
     },
     {
-        name: 'Supplier',
+        name: 'For Sale',
         deal_area_element : ['Contact', 'ContactPhone', 'CompanyName'],
         location_area_element : ['Country', 'State', 'City'],
         price_element: ['Price', 'Shipping', 'Customs', 'Commission', 'Margin'],
@@ -2634,7 +2634,7 @@ function getBadgetForEachStatusOnDeal(status) {
     else if (status == 'Auction') {
         return '<span class="badge badge-warning" style="margin-left : 0px;">' + getLocalizationWord(status) + '</span>';
     }
-    else if (status == 'Supplier') {
+    else if (status == 'For Sale') {
         return '<span class="badge badge-info" style="margin-left : 0px;">' + getLocalizationWord(status) + '</span>';
     }
     else if (status == 'Inventory') {
@@ -2696,7 +2696,7 @@ function getBadgetForDealType(dealType) {
     if (dealType == 'Auction') {
         return '<span class="badge badge-warning" style="margin-left : 0px;">' + getLocalizationWord(dealType) + '</span>';
     }
-    else if (dealType == 'Supplier') {
+    else if (dealType == 'For Sale') {
         return '<span class="badge badge-info" style="margin-left : 0px;">' + getLocalizationWord(dealType) + '</span>';
     }
     else if (dealType == 'Consignment') {

@@ -490,7 +490,7 @@ class Deals extends CI_Controller
         if ($Model != '')
             $criteria['EqModel'] = $Model;
 
-        // Search on Suppliers
+        // Search on For Sales
         $PriceColumn = array('Price', 'Customs');
         $ReturnArray = array();
 
@@ -504,11 +504,11 @@ class Deals extends CI_Controller
             if ($EqCategory == 'Loader Backhoe')
             {
                 $isPriceSet = false;
-                // Search on Suppliers
+                // Search on For Sales
                 //echo $Column;
                 $this->db->select('Price');            
                 $this->db->where($criteria);        
-                $this->db->where('DealType', 'Supplier');
+                $this->db->where('DealType', 'For Sale');
                 $this->db->limit(2);
                 $this->db->order_by('DateAdded', 'desc');
                 $this->db->from('tblDeals');
@@ -524,12 +524,12 @@ class Deals extends CI_Controller
                     $isPriceSet = true;
                 }
 
-                // Search on Supplier with 3 Years;
+                // Search on For Sale with 3 Years;
                 if ($Year != '' && $isPriceSet == false){
                     $YearArray = array($Year - 1, $Year + 1);                
                     $this->db->select('Price');
                     $this->db->where($criteria);        
-                    $this->db->where('DealType', 'Supplier');
+                    $this->db->where('DealType', 'For Sale');
                     $this->db->where_in('EqYear', $YearArray);
                     $this->db->limit(2);
                     $this->db->order_by('DateAdded', 'desc');
@@ -601,7 +601,7 @@ class Deals extends CI_Controller
         
         // Calculate the Customs
 
-        if ($DealType == 'Auction' || $DealType == 'Supplier') {
+        if ($DealType == 'Auction' || $DealType == 'For Sale') {
             $this->db->select('Customs');
             $this->db->where('EqCategory', $EqCategory);
             $this->db->where_in('EqYear', array($Year - 1, $Year, $Year + 1));
@@ -617,14 +617,14 @@ class Deals extends CI_Controller
         }
 
         // Calculate for Shipping
-        if ($DealType == 'Auction' || $DealType == 'Supplier') {
+        if ($DealType == 'Auction' || $DealType == 'For Sale') {
             $this->db->select('Shipping');
             $this->db->where('EqCategory', $EqCategory);
             if ($Country != '')
                 $this->db->where('Country', $Country);
             if ($State != '')  
                 $this->db->where('State', $State);
-            $this->db->where_in('DealType', array('Auction', 'Supplier'));
+            $this->db->where_in('DealType', array('Auction', 'For Sale'));
             $this->db->limit(5);
             $this->db->order_by('DateAdded', 'desc');
             $this->db->from('tblDeals');
@@ -1437,7 +1437,7 @@ class Deals extends CI_Controller
             $data['Customs'] = $this->input->post('Customs');
             $data['Commission'] = $this->input->post('Commission');            
             $data['Total'] = $this->input->post('Total');
-        } else if ($dealType == 'Supplier') {
+        } else if ($dealType == 'For Sale') {
             $data['Price'] = $this->input->post('Price');
             $data['Shipping'] = $this->input->post('Shipping');
             $data['Customs'] = $this->input->post('Customs');
@@ -2699,13 +2699,13 @@ class Deals extends CI_Controller
         $this->load->model('Deal_model');
 
         $auction = $this->Deal_model->getActiveDealsCountByType('Auction');
-        $supplier = $this->Deal_model->getActiveDealsCountByType('Supplier');
+        $ForSale = $this->Deal_model->getActiveDealsCountByType('For Sale');
         $consignment = $this->Deal_model->getActiveDealsCountByType('Consignment');
         $inventory = $this->Deal_model->getActiveDealsCountByType('Inventory');
 
         echo json_encode(array(
             'Auction' => $auction,
-            'Supplier' => $supplier,
+            'For Sale' => $ForSale,
             'Consignment' => $consignment,
             'Inventory' => $inventory
         ));
@@ -2735,13 +2735,13 @@ class Deals extends CI_Controller
         $this->load->model('Deal_model');
 
         $auction = $this->Deal_model->getTodayDealsCountByType('Auction');
-        $supplier = $this->Deal_model->getTodayDealsCountByType('Supplier');
+        $ForSale = $this->Deal_model->getTodayDealsCountByType('For Sale');
         $consignment = $this->Deal_model->getTodayDealsCountByType('Consignment');
         $inventory = $this->Deal_model->getTodayDealsCountByType('Inventory');
 
         echo json_encode(array(
             'Auction' => $auction,
-            'Supplier' => $supplier,
+            'For Sale' => $ForSale,
             'Consignment' => $consignment,
             'Inventory' => $inventory
         ));

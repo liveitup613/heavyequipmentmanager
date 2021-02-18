@@ -533,7 +533,7 @@ function Calculate() {
 
          total = (valBuyPremium * valPrice) / 100 + valPrice + valShipping + valCustoms + valComm;
 
-    } else if (dealtype == 'Supplier') {
+    } else if (dealtype == 'For Sale') {
 
         var valPrice = Number($('#Price').val());
         var valShipping = Number($('#Shipping').val());
@@ -589,7 +589,7 @@ function onChangeDealType() {
     $('#PreviewDealType').html(getLocalizationWord(val));
 
     $('#deal-area-container').html(get_deal_area_elements(val));
-    if (val == 'Supplier' || val == 'Consignment') {
+    if (val == 'For Sale' || val == 'Consignment') {
         var phoneConfig = {            
             onlyCountries : phoneCountries,
             preferredCountries : ["mx"],
@@ -600,7 +600,7 @@ function onChangeDealType() {
             autoPlaceholder : ''
         };
 
-        if (val == 'Supplier')
+        if (val == 'For Sale')
             phoneConfig.preferredCountries = ["us"];
     
         $('#ContactPhone').intlTelInput(phoneConfig);
@@ -621,7 +621,7 @@ function onChangeDealType() {
         $('#inputSubmitLink-box').css('display', 'block');
         $('#inputSubmitLink').attr('required', true);
 
-    } else if (val == "Supplier") {
+    } else if (val == "For Sale") {
         $('#inputAuctioneer-box').css('display', 'none');
         $('#inputSubmitLink-box').css('display', 'block');
         $('#inputSubmitLink').attr('required', false);       
@@ -670,8 +670,8 @@ function getBannerImageElement(data) {
     var bannername = 'auction-banner-footer.png';
     // if (dealType == 'Auction') {
     //     bannername = 'auction-banner-footer.png';
-    // } else if (dealType == 'Supplier') {
-    //     bannername = 'supplier-banner-footer.png';
+    // } else if (dealType == 'For Sale') {
+    //     bannername = 'For Sale-banner-footer.png';
     // }
 
     height = regularHeight;

@@ -218,7 +218,7 @@ header('Expires: 0');
                                                     <div class="input-group mb-3">
                                                         <select class="custom-select" id="inputDealType" name="DealType" onchange="onChangeDealType()">
                                                             <option value="Auction"><?php echo lang('Auction');?></option>
-                                                            <option value="Supplier"><?php echo lang('Supplier');?></option>
+                                                            <option value="For Sale"><?php echo lang('For Sale');?></option>
                                                             <option value="Consignment"><?php echo lang('Consignment');?></option>
                                                             <option value="Inventory"><?php echo lang('Inventory');?></option>                                                           
                                                         </select>

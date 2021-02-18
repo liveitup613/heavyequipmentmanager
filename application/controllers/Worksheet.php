@@ -430,18 +430,18 @@ class Worksheet extends CI_Controller
             'num' => ($allAuction - $rbAuctionCount - $ironplanetCount)
         ));
 
-        $supplierTraderCount = $this->Deal_model->getSupplierTraderByUser($user, $startDate, $endDate);
+        $ForSaleTraderCount = $this->Deal_model->getForSaleTraderByUser($user, $startDate, $endDate);
         array_push($result, array(
-            'name' => lang('Machinery/Crane Trader Suppliers'),
-            'point' => $point['supplierTrader'],
-            'num' => $supplierTraderCount
+            'name' => lang('Machinery/Crane Trader For Sales'),
+            'point' => $point['For SaleTrader'],
+            'num' => $ForSaleTraderCount
         ));
 
-        $allSupplierCount = $this->Deal_model->getAllSupplierByUser($user, $startDate, $endDate);
+        $allForSaleCount = $this->Deal_model->getAllForSaleByUser($user, $startDate, $endDate);
         array_push($result, array(
-            'name' => lang('Other Suppliers'),
-            'point' => $point['supplier'],
-            'num' => ($allSupplierCount - $supplierTraderCount)
+            'name' => lang('Other For Sales'),
+            'point' => $point['For Sale'],
+            'num' => ($allForSaleCount - $ForSaleTraderCount)
         ));
 
         $allConsignmentCount = $this->Deal_model->getAllConsignmentByUser($user, $startDate, $endDate);

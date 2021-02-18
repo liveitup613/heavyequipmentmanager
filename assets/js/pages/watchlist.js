@@ -580,8 +580,8 @@ function renderModalTB() {
 
                                         var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                                         var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                                        if (full.DealType == 'Supplier') {
-                                            $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                                        if (full.DealType == 'For Sale') {
+                                            $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                                         } else if (full.DealType == 'Consignment') {
                                             $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                                         } else if (full.DealType == 'Inventory') {
@@ -641,7 +641,7 @@ function renderModalTB() {
                                             contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                             contentItem += '<div class="pdf-description-content-box">';
 
-                                        } else if (full.DealType == 'Supplier') {
+                                        } else if (full.DealType == 'For Sale') {
 
                                             var title = getTitleFromDatabase(full);
                                             title = title.substring(0, 32);
@@ -838,8 +838,8 @@ function renderModalTB() {
 
                             var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                             var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                            if (full.DealType == 'Supplier') {
-                                $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                            if (full.DealType == 'For Sale') {
+                                $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                             } else if (full.DealType == 'Consignment') {
                                 $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                             } else if (full.DealType == 'Inventory') {
@@ -899,7 +899,7 @@ function renderModalTB() {
                                 contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                 contentItem += '<div class="pdf-description-content-box">';
 
-                            } else if (full.DealType == 'Supplier') {
+                            } else if (full.DealType == 'For Sale') {
 
                                 var title = getTitleFromDatabase(full);
                                 title = title.substring(0, 32);
@@ -1377,7 +1377,7 @@ function onDetailInfo(id) {
                 item += "<span class='item-info-index'>" + getLocalizationWord('Added Date') + ":&nbsp; </span> <span class='item-info-content'>" + result.DateAdded + '</span><br>';
                 item += "<span class='item-info-index'>" + getLocalizationWord('Additional Info') + ":&nbsp; </span><br><textarea class='item-info-content' disabled>" + result.Note + '</textarea><br>';
 
-            } else if (result.DealType == 'Supplier') {
+            } else if (result.DealType == 'For Sale') {
 
                 item += "<span class='item-info-index'>" + getLocalizationWord('Deal Type') + ":&nbsp; </span> <span class='item-info-content'>" + result.DealType + '</span><br>';
                 item += "<span class='item-info-index'>" + getLocalizationWord('Category') + ":&nbsp; </span> <span class='item-info-content'>" + result.EqCategory + '</span><br>';
@@ -1523,7 +1523,7 @@ function onEditInfo(id) {
 
                 $('#item-enddate').datepicker('setStartDate', new Date);
 
-            } else if (result.DealType == 'Supplier') {
+            } else if (result.DealType == 'For Sale') {
 
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Price') + "Price:&nbsp; </span> <input class='item-edit-content' type='number' id='item-price' name='Price'  onkeyup='calculateTotalValue(\"" + result.DealType + "\")'  value='" + result.Price + "'></div>";
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Shipping') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-shipping' name='Shipping' onkeyup='calculateTotalValue(\"" + result.DealType + "\")' value='" + result.Shipping + "'></div>";
@@ -1592,7 +1592,7 @@ function calculateTotalValue(dealType) {
 
         $('#item-total').val(total);
 
-    } else if (dealType == 'Supplier') {
+    } else if (dealType == 'For Sale') {
 
         var valPrice = parseInt($('#item-price').val());
         var valShipping = parseInt($('#item-shipping').val());
@@ -2848,8 +2848,8 @@ function getBannerImageElement(pictures) {
         var bannerImage = 'auction-banner-footer.png';
         if (data.DealType == 'Auction') {
             bannerImage = 'auction-banner-footer.png';
-        } else if (data.DealType == 'Supplier') {
-            bannerImage = 'supplier-banner-footer.png';
+        } else if (data.DealType == 'For Sale') {
+            bannerImage = 'For Sale-banner-footer.png';
         } else if (data.DealType == 'Consignment') {
             bannerImage = 'consignment-banner-footer.png';
         } else if (data.DealType == 'Inventory') {
@@ -2904,8 +2904,8 @@ function getBannerImageElement(pictures) {
 //                     var footerImage = '';
 //                     if (data.DealType == 'Auction') {
 //                         footerImage = 'auction-banner-footer.png';
-//                     } else if (data.DealType == 'Supplier') {
-//                         footerImage = 'supplier-banner-footer.png';
+//                     } else if (data.DealType == 'For Sale') {
+//                         footerImage = 'For Sale-banner-footer.png';
 //                     } else if (data.DealType == 'Consignment') {
 //                         footerImage = 'consignment-banner-footer.png';
 //                     } else if (data.DealType == 'Inventory') {

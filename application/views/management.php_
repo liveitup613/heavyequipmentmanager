@@ -182,7 +182,7 @@ header('Expires: 0');
                                     <select class="custom-select" id="DealType" name="DealType" onchange="onChangeDealType()">
                                         <option value="All Deals">All Deals</option>
                                         <option value="Auction">Auction</option>
-                                        <option value="Supplier">Supplier</option>
+                                        <option value="For Sale">For Sale</option>
                                         <option value="Consignment">Consignment</option>
                                         <option value="Inventory">Inventory</option>
                                     </select>

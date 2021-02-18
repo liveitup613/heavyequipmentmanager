@@ -43,7 +43,7 @@ class Maintenance extends CI_Controller
         
         $this->db->select('ID');
         $date = date('Y-m-d H:i:s', strtotime('-'. $activeDealTime . 'days'));
-        $dealTypeArray = array('Consignment', 'Supplier');
+        $dealTypeArray = array('Consignment', 'For Sale');
         $this->db->where_in('DealType', $dealTypeArray);
         $this->db->where('DateAdded <', $date);
         $this->db->where('DealStatus', '');

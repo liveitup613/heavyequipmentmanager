@@ -200,7 +200,7 @@ var columnData = [
             else if (DealType == 'Auction') {
                 return SellerDetail + BuyerDetail + FinderDetail;
             }
-            else if (DealType == 'Supplier') {
+            else if (DealType == 'For Sale') {
                 return SellerDetail + BuyerDetail + FinderDetail;
             }
             else if (DealType == 'Consignment') {
@@ -514,7 +514,7 @@ function onIncentives(ID) {
 
             var DealInfo = '';
             DealInfo += '<span class="item-info-index">' + getLocalizationWord('Deal Type') + ':&nbsp </span><span class="item-info-content">' + getBadgetForDealType(Sale.DealType) + '</span><br>';                    
-            if (Sale.DealType == 'Inventory' || Sale.DealType == 'Supplier' || Sale.DealType == 'Consignment') {
+            if (Sale.DealType == 'Inventory' || Sale.DealType == 'For Sale' || Sale.DealType == 'Consignment') {
                 DealInfo += '<span class="item-info-index">' + getLocalizationWord('Listing Price') + ':&nbsp </span><span class="item-info-content">' + numberWithCommas(Deal.Price) + '</span><br>';                    
                 DealInfo += '<span class="item-info-index">' + getLocalizationWord('Margin') + ':&nbsp </span><span class="item-info-content">' + numberWithCommas(Deal.Margin) + '</span><br>';                    
             }
@@ -569,8 +569,8 @@ function onIncentives(ID) {
 
             if (DealType == 'Auction')
                 Buying = Setting.AuctionPaygrade;
-            else if (DealType == 'Supplier')
-                Buying = Setting.SupplierPaygrade;
+            else if (DealType == 'For Sale')
+                Buying = Setting.For SalePaygrade;
 
             BuyingNegotiation = BuyingProfit * Setting.BuyingNegotiation / 100;
             FinderProfitFromMargin = MarginProfit * Setting.FinderMargin / 100;
@@ -626,7 +626,7 @@ function onIncentives(ID) {
                 $('#FinderIncentive').val(Number(DistributionAmount / PersonNum).toFixed(2));
                 $('#BuyerIncentive').val(Number(DistributionAmount / PersonNum).toFixed(2));
             }
-            else if (DealType == 'Supplier') {
+            else if (DealType == 'For Sale') {
                 $('#SellerPanel').show();
                 $('#BuyerPanel').show();
                 $('#FinderPanel').show();

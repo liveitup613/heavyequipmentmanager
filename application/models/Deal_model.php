@@ -2040,7 +2040,7 @@ class Deal_model extends CI_Model
 
         $this->db->where('UserID', $ID);
         $date = date('Y-m-d H:i:s', strtotime('-'.($activeDealTime - 2).'days'));
-        $dealTypeArray = array('Consignment', 'Supplier');
+        $dealTypeArray = array('Consignment', 'For Sale');
         $this->db->where_in('DealType', $dealTypeArray);
         $this->db->where('DateAdded <', $date);
         $this->db->from('viewActiveDeals');
@@ -2059,7 +2059,7 @@ class Deal_model extends CI_Model
         $activeDealTime = $row['ActiveDealTime'];
 
         $date = date('Y-m-d H:i:s', strtotime('-'.($activeDealTime - 2).'days'));
-        $dealTypeArray = array('Consignment', 'Supplier');
+        $dealTypeArray = array('Consignment', 'For Sale');
         $this->db->where_in('DealType', $dealTypeArray);
         $this->db->where('DateAdded <', $date);
         $this->db->from('viewActiveDeals');
@@ -2170,10 +2170,10 @@ class Deal_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    public function getSupplierTraderByUser($user, $startDate, $endDate) {
+    public function getForSaleTraderByUser($user, $startDate, $endDate) {
         $this->db->select('ID');
         $this->db->where('UserID', $user);
-        $this->db->where('DealType', 'Supplier');
+        $this->db->where('DealType', 'For Sale');
         $this->db->group_start();
         $this->db->like('LOWER(Link)', 'cranetrader');
         $this->db->or_like('LOWER(Link)', 'machinerytrader');
@@ -2185,10 +2185,10 @@ class Deal_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    public function getAllSupplierByUser($user, $startDate, $endDate) {
+    public function getAllForSaleByUser($user, $startDate, $endDate) {
         $this->db->select('ID');
         $this->db->where('UserID', $user);
-        $this->db->where('DealType', 'Supplier');
+        $this->db->where('DealType', 'For Sale');
         $this->db->where('DateAdded >=', $startDate." 00:00:00");
         $this->db->where('DateAdded <=', $endDate." 23:55:55");
         $this->db->from('tblDeals');
@@ -2285,7 +2285,7 @@ class Deal_model extends CI_Model
         $this->db->from('tblSales');
         $this->db->where('tblSales.DealID != 0');
         $this->db->where('tblSales.SalesStatus !=', 'Canceled');
-        $this->db->where_in('tblSales.DealType', array('Auction', 'Inventory', 'Supplier', 'Consignment'));
+        $this->db->where_in('tblSales.DealType', array('Auction', 'Inventory', 'For Sale', 'Consignment'));
         $this->db->where('tblDeals.DateAdded >=', $startDate.' 00:00:00');
         $this->db->where('tblDeals.DateAdded <=', $endDate.' 23:59:59');
         $this->db->where('tblDeals.UserID', $UserID);

@@ -103,8 +103,8 @@ function renderModalTB() {
 
                                 var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                                 var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                                if (full.DealType == 'Supplier') {
-                                    $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                                if (full.DealType == 'For Sale') {
+                                    $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                                 } else if (full.DealType == 'Consignment') {
                                     $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                                 } else if (full.DealType == 'Inventory') {
@@ -165,7 +165,7 @@ function renderModalTB() {
                                     contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                     contentItem += '<div class="pdf-description-content-box">';
 
-                                } else if (full.DealType == 'Supplier') {
+                                } else if (full.DealType == 'For Sale') {
 
                                     var title = getTitleFromDatabase(full);
                                     title = title.substring(0, 32);

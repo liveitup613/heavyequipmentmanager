@@ -173,7 +173,7 @@ var columnData = [
             else if (DealType == 'Auction') {
                 return SellerDetail + BuyerDetail + FinderDetail;
             }
-            else if (DealType == 'Supplier') {
+            else if (DealType == 'For Sale') {
                 return SellerDetail + BuyerDetail + FinderDetail;
             }
             else if (DealType == 'Consignment') {

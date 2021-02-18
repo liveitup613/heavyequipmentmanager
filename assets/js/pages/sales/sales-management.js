@@ -1935,7 +1935,7 @@ function onEditPrice(ID) {
             $('.DiscountInputBox').show();
             $('.CommInputBox').show();
 
-            if (data.DealType == 'Supplier') {
+            if (data.DealType == 'For Sale') {
                 $('.BuyerPremiumInputBox').hide();
             }
             else if (data.DealType == 'Consignment') {
@@ -2254,7 +2254,7 @@ function onSaleDocument(ID) {
                     $('#deal_type').html('Subasta');                                   
                 else if (full.DealType == 'Inventory') 
                     $('#deal_type').html('Inventario');                
-                else if (full.DealType == 'Supplier')
+                else if (full.DealType == 'For Sale')
                     $('#deal_type').html('Proveedor');
                 else if (full.DealType == 'Consignment')
                     $('#deal_type').html('Consignación');
@@ -2437,7 +2437,7 @@ function onDepsoitDocument(ID) {
                     $('#deal_type').html('Subasta');                                   
                 else if (full.DealType == 'Inventory') 
                     $('#deal_type').html('Inventario');                
-                else if (full.DealType == 'Supplier')
+                else if (full.DealType == 'For Sale')
                     $('#deal_type').html('Proveedor');
                 else if (full.DealType == 'Consignment')
                     $('#deal_type').html('Consignación');

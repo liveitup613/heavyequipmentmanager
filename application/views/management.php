@@ -236,13 +236,11 @@ header('Expires: 0');
                 <div class='row clearfix'>
                     <div class="col-3">
                         <div class="card">
-                            <div class="body">
+                            <div class="body" style='height: 160px;'>
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Active Deals');?></h6>
                                 <div class="card-value text-success float-left mr-3 pr-2 border-right" id='ActiveDealsCount'>0</div>
                                 <div class="font-12"><?php echo lang('Auction');?> <span class="float-right" id='AuctionCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Supplier');?> <span class="float-right" id='SupplierCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Consignment');?> <span class="float-right" id='ConsignmentCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Inventory');?> <span class="float-right" id='InventoryCount'>0</span></div>
+                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='For SaleCount'>0</span></div>
                             </div>
                         </div>
                     </div>   
@@ -259,13 +257,11 @@ header('Expires: 0');
                     </div> 
                     <div class="col-3">
                         <div class="card">
-                            <div class="body">
+                            <div class="body" style='height: 160px;'>>
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Added Deals');?></h6>
                                 <div class="card-value text-info float-left mr-3 pr-2 border-right" id='AddedDealsCount'>0</div>
                                 <div class="font-12"><?php echo lang('Auction');?> <span class="float-right" id='AddedAuctionCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Supplier');?> <span class="float-right" id='AddedSupplierCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Consignment');?> <span class="float-right" id='AddedConsignmentCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Inventory');?> <span class="float-right" id='AddedInventoryCount'>0</span></div>
+                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='AddedFor SaleCount'>0</span></div>
                             </div>
                         </div>
                     </div>       
@@ -274,8 +270,8 @@ header('Expires: 0');
                             <div class="body" style='height: 160px;'>
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Search Help');?></h6>
                                 <div class="card-value text-default float-left mr-3 pr-2 border-right" id='SearchHelpCount'>0</div>
-                                <div class="font-12"><?php echo lang('Deposit with No Deal');?> <span class="float-right" id='DepositWithNoDealCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('Deposit Pending Auction');?> <span class="float-right" id='DepositPendingAuctionCount'>0</span></div>
+                                <!-- <div class="font-12"><?php echo lang('Deposit with No Deal');?> <span class="float-right" id='DepositWithNoDealCount'>0</span></div>
+                                <div class="font-12"><?php echo lang('Deposit Pending Auction');?> <span class="float-right" id='DepositPendingAuctionCount'>0</span></div> -->
                                 <div class="font-12"><?php echo lang('Search Help Activated');?> <span class="float-right" id='SearchHelpActiveCount'>0</span></div>                                
                             </div>
                         </div>
@@ -294,7 +290,7 @@ header('Expires: 0');
                                                 onchange="onChangeDealType()" style='width: 150px;'>
                                                 <option value="All Deals"><?php echo lang('All Deals');?></option>
                                                 <option value="Auction"><?php echo lang('Auction');?></option>
-                                                <option value="Supplier"><?php echo lang('Supplier');?></option>
+                                                <option value="For Sale"><?php echo lang('For Sale');?></option>
                                                 <option value="Consignment"><?php echo lang('Consignment');?></option>
                                                 <option value="Inventory"><?php echo lang('Inventory');?></option>
                                             </select>                                                                                  

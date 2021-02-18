@@ -733,7 +733,7 @@ class Sales_model extends CI_Model
             else if ($role == 'Finder') {
                 $this->db->where('tbluser.USERNAME', $user);
                 if ($dealType == 'All') {
-                    $this->db->where_in('tblSales.DealType', array('Auction', 'Supplier', 'Consignment'));
+                    $this->db->where_in('tblSales.DealType', array('Auction', 'For Sale', 'Consignment'));
                 }
             }
             else if ($role == 'Seller') {

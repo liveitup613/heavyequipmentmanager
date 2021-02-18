@@ -61,8 +61,8 @@ function getTVModeDealData(id = 0, direction = 0) {
                 var footerImage = '';
                 if (data.DealType == 'Auction') {
                     footerImage = 'auction-banner-footer.png';
-                } else if (data.DealType == 'Supplier') {
-                    footerImage = 'supplier-banner-footer.png';
+                } else if (data.DealType == 'For Sale') {
+                    footerImage = 'For Sale-banner-footer.png';
                 } else if (data.DealType == 'Consignment') {
                     footerImage = 'consignment-banner-footer.png';
                 } else if (data.DealType == 'Inventory') {

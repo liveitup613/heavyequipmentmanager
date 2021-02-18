@@ -52,19 +52,19 @@ var columnData = [
                 action = '';
             }
 
-            var watchButton;
-            if (full.watch == 0) {
-                watchButton = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Add to Watch List') + '" onclick="onAddWatchList(' + full.ID + ', this)"><i class="icon-star"></i></button>';
-            } else {
-                watchButton = '';
-            }
+            // var watchButton;
+            // if (full.watch == 0) {
+            //     watchButton = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Add to Watch List') + '" onclick="onAddWatchList(' + full.ID + ', this)"><i class="icon-star"></i></button>';
+            // } else {
+            //     watchButton = '';
+            // }
 
-            var tvButton;
-            if (full.TvMode == 'no') {
-                tvButton = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" data-tvmode="no" title="' + getLocalizationWord('Add to TV Mode') + '" onclick="onSetTVMode(' + full.ID + ', this)"><i class="icon-screen-desktop"></i></button>';
-            } else {
-                tvButton = '<button  class="btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top"  data-tvmode="yes"  title="' + getLocalizationWord('Remove from TV Mode') + '" onclick="onSetTVMode(' + full.ID + ', this)"><i class="icon-share-alt"></i></button>';
-            }
+            // var tvButton;
+            // if (full.TvMode == 'no') {
+            //     tvButton = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" data-tvmode="no" title="' + getLocalizationWord('Add to TV Mode') + '" onclick="onSetTVMode(' + full.ID + ', this)"><i class="icon-screen-desktop"></i></button>';
+            // } else {
+            //     tvButton = '<button  class="btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top"  data-tvmode="yes"  title="' + getLocalizationWord('Remove from TV Mode') + '" onclick="onSetTVMode(' + full.ID + ', this)"><i class="icon-share-alt"></i></button>';
+            // }
 
             var publishButton;            
             publishButton = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Publish') + '"  onclick="onPublishModal(' + full.ID + ', \'' + full.EqCategory + '\')"><i class="icon-cloud-upload"></i></button>';
@@ -102,7 +102,7 @@ var columnData = [
                 dealBan = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Remove Alert') + '" onclick="onUnmarkDeal(' + full.ID + ')"><i class="icon-ban"></i></button>';            
 
             return '<div class="row" style = "width : 125px; padding-left : 5px;">' +
-                infoButton + linkButton + mediaButton + editButton + deleteButton + publishButton + watchButton + tvButton + closeButton + dealBan + procurement + 
+                infoButton + linkButton + mediaButton + editButton + deleteButton + publishButton + closeButton + dealBan + procurement + 
             '</div>';
         }
 
@@ -228,7 +228,7 @@ var columnData = [
             var addDateTime = full.DateAdded.split(' ');
             var addDate = addDateTime[0];
 
-            if (addedDay.getTime() < today.getTime() && (full.DealType == 'Consignment' || full.DealType == 'Supplier')) {
+            if (addedDay.getTime() < today.getTime() && (full.DealType == 'Consignment' || full.DealType == 'For Sale')) {
                 return full.USERNAME  + '<br>' + 
                     "<span class='badge badge-warning' style='margin-left : 0px;'>" + addDate + "</span>";
             }           
@@ -809,8 +809,8 @@ function renderModalTB() {
 
                                         var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                                         var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                                        if (full.DealType == 'Supplier') {
-                                            $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                                        if (full.DealType == 'For Sale') {
+                                            $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                                         } else if (full.DealType == 'Consignment') {
                                             $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                                         } else if (full.DealType == 'Inventory') {
@@ -871,7 +871,7 @@ function renderModalTB() {
                                             contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                             contentItem += '<div class="pdf-description-content-box">';
 
-                                        } else if (full.DealType == 'Supplier') {
+                                        } else if (full.DealType == 'For Sale') {
 
                                             var title = getTitleFromDatabase(full);
                                             title = title.substring(0, 32);
@@ -1068,8 +1068,8 @@ function renderModalTB() {
 
                             var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                             var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                            if (full.DealType == 'Supplier') {
-                                $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                            if (full.DealType == 'For Sale') {
+                                $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                             } else if (full.DealType == 'Consignment') {
                                 $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                             } else if (full.DealType == 'Inventory') {
@@ -1131,7 +1131,7 @@ function renderModalTB() {
                                 contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                 contentItem += '<div class="pdf-description-content-box">';
 
-                            } else if (full.DealType == 'Supplier') {
+                            } else if (full.DealType == 'For Sale') {
 
                                 var title = getTitleFromDatabase(full);
                                 title = title.substring(0, 32);
@@ -1643,7 +1643,7 @@ function onDetailInfo(id) {
                 item += "<span class='item-info-index'>" + getLocalizationWord('Added Date') + ":&nbsp; </span> <span class='item-info-content'>" + result.DateAdded + '</span><br>';
                 item += "<span class='item-info-index'>" + getLocalizationWord('Additional Info') + ":&nbsp; </span><br><textarea class='item-info-content' disabled>" + result.Note + '</textarea><br>';
 
-            } else if (result.DealType == 'Supplier') {
+            } else if (result.DealType == 'For Sale') {
 
                 item += "<span class='item-info-index'>" + getLocalizationWord('Deal Type') + ":&nbsp; </span> <span class='item-info-content'>" + result.DealType + '</span><br>';
                 item += "<span class='item-info-index'>" + getLocalizationWord('Category') + ":&nbsp; </span> <span class='item-info-content'>" + result.EqCategory + '</span><br>';
@@ -1826,7 +1826,7 @@ function onEditInfo(id) {
 
                 $('#item-enddate').datepicker('setStartDate', new Date);
 
-            } else if (result.DealType == 'Supplier') {
+            } else if (result.DealType == 'For Sale') {
 
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Price') + "Price:&nbsp; </span> <input class='item-edit-content' type='number' id='item-price' name='Price'  onkeyup='calculateTotalValue(\"" + result.DealType + "\")'  value='" + result.Price + "'></div>";
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Shipping') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-shipping' name='Shipping' onkeyup='calculateTotalValue(\"" + result.DealType + "\")' value='" + result.Shipping + "'></div>";
@@ -1895,7 +1895,7 @@ function calculateTotalValue(dealType) {
 
         $('#item-total').val(total);
 
-    } else if (dealType == 'Supplier') {
+    } else if (dealType == 'For Sale') {
 
         var valPrice = parseInt($('#item-price').val());
         var valShipping = parseInt($('#item-shipping').val());
@@ -2195,8 +2195,8 @@ function renderPublishModal(DealID) {
 
                                     var $banner1Url = base_url + "assets/images/ribbon/com_mark.png";
                                     var $banner2url = base_url + "assets/images/ribbon/auction-banner-footer.png";
-                                    if (full.DealType == 'Supplier') {
-                                        $banner2url = base_url + "assets/images/ribbon/supplier-banner-footer.png";
+                                    if (full.DealType == 'For Sale') {
+                                        $banner2url = base_url + "assets/images/ribbon/For Sale-banner-footer.png";
                                     } else if (full.DealType == 'Consignment') {
                                         $banner2url = base_url + "assets/images/ribbon/consignment-banner-footer.png";
                                     } else if (full.DealType == 'Inventory') {
@@ -2257,7 +2257,7 @@ function renderPublishModal(DealID) {
                                         contentItem += '<div class="pdf-label5">DESCRIPCIÓN</div>'
                                         contentItem += '<div class="pdf-description-content-box">';
 
-                                    } else if (full.DealType == 'Supplier') {
+                                    } else if (full.DealType == 'For Sale') {
 
                                         var title = getTitleFromDatabase(full);
                                         title = title.substring(0, 32);
@@ -3548,8 +3548,8 @@ function getBannerImageElement(pictures) {
         var bannerImage = 'auction-banner-footer.png';
         if (data.DealType == 'Auction') {
             bannerImage = 'auction-banner-footer.png';
-        } else if (data.DealType == 'Supplier') {
-            bannerImage = 'supplier-banner-footer.png';
+        } else if (data.DealType == 'For Sale') {
+            bannerImage = 'For Sale-banner-footer.png';
         } else if (data.DealType == 'Consignment') {
             bannerImage = 'consignment-banner-footer.png';
         } else if (data.DealType == 'Inventory') {
@@ -3687,10 +3687,10 @@ function getActiveDealsStatus() {
         success : function (res) {
             var data = JSON.parse(res);
 
-            var total = data.Auction + data.Supplier + data.Consignment + data.Inventory;
+            var total = data.Auction + data.ForSale + data.Consignment + data.Inventory;
 
             $('#AuctionCount').html(data.Auction);
-            $('#SupplierCount').html(data.Supplier);
+            $('#For SaleCount').html(data.ForSale);
             $('#ConsignmentCount').html(data.Consignment);
             $('#InventoryCount').html(data.Inventory);
 
@@ -3724,10 +3724,10 @@ function getTodayAddedDealStatus() {
         success: function (res) {
             var data = JSON.parse(res);
 
-            var total = data.Auction + data.Supplier + data.Consignment + data.Inventory;
+            var total = data.Auction + data.ForSale + data.Consignment + data.Inventory;
 
             $('#AddedAuctionCount').html(data.Auction);
-            $('#AddedSupplierCount').html(data.Supplier);
+            $('#AddedFor SaleCount').html(data.ForSale);
             $('#AddedConsignmentCount').html(data.Consignment);
             $('#AddedInventoryCount').html(data.Inventory);
 
@@ -3743,8 +3743,8 @@ function getSearchHelpDealsStatus() {
         success : function (res) {
             var data = JSON.parse(res);
 
-            $('#DepositWithNoDealCount').html(data.NoDeal);
-            $('#DepositPendingAuctionCount').html(data.Pending);
+            // $('#DepositWithNoDealCount').html(data.NoDeal);
+            // $('#DepositPendingAuctionCount').html(data.Pending);
             $('#SearchHelpActiveCount').html(data.SearchHelp);
 
             $('#SearchHelpCount').html(data.SearchHelp);

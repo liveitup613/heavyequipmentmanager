@@ -178,7 +178,7 @@ class Incentive extends CI_Controller
             $DealType = $deal_data['DealType'];
             $BuyingSource = '';
 
-            if ($DealType == 'Auction' || $DealType == 'Supplier' || $DealType == 'Consignment') {
+            if ($DealType == 'Auction' || $DealType == 'For Sale' || $DealType == 'Consignment') {
                 if ($Link != '') {
                     //echo $Link;
                     if (strpos($Link, 'https') === false) {
@@ -455,7 +455,7 @@ class Incentive extends CI_Controller
             else if ($role == 'Finder') {
                 $this->db->where('tbluser.USERNAME', $user);
                 if ($dealType == 'All') {
-                    $this->db->where_in('tblSales.DealType', array('Auction', 'Supplier', 'Consignment'));
+                    $this->db->where_in('tblSales.DealType', array('Auction', 'For Sale', 'Consignment'));
                 }
             }
             else if ($role == 'Seller') {
@@ -571,7 +571,7 @@ class Incentive extends CI_Controller
             else if ($role == 'Finder') {
                 $this->db->where('tbluser.USERNAME', $user);
                 if ($dealType == 'All') {
-                    $this->db->where_in('tblSales.DealType', array('Auction', 'Supplier', 'Consignment'));
+                    $this->db->where_in('tblSales.DealType', array('Auction', 'For Sale', 'Consignment'));
                 }
             }
             else if ($role == 'Seller') {
@@ -670,7 +670,7 @@ class Incentive extends CI_Controller
             else if ($role == 'Finder') {
                 $this->db->where('tbluser.USERNAME', $user);
                 if ($dealType == 'All') {
-                    $this->db->where_in('tblSales.DealType', array('Auction', 'Supplier', 'Consignment'));
+                    $this->db->where_in('tblSales.DealType', array('Auction', 'For Sale', 'Consignment'));
                 }
             }
             else if ($role == 'Seller') {
@@ -700,9 +700,9 @@ class Incentive extends CI_Controller
         $Seller = 0;
         $Buyer = 0;
 
-        $SellerArray = array('Inventory', 'Auction', 'Supplier', 'Consignment', 'Manufacturing', 'Logistics');
-        $FinderArray = array('Auction', 'Supplier', 'Consignment');
-        $BuyerArray = array('Auction', 'Supplier');
+        $SellerArray = array('Inventory', 'Auction', 'For Sale', 'Consignment', 'Manufacturing', 'Logistics');
+        $FinderArray = array('Auction', 'For Sale', 'Consignment');
+        $BuyerArray = array('Auction', 'For Sale');
 
         foreach ($result as $row) {
             if ($row['SalesRep'] == $user && in_array($row['DealType'], $SellerArray)) {

@@ -202,8 +202,8 @@ var words = {
     "Auction" : {
         english: "Auction", spanish: "Subasta"
     },
-    "Supplier" : {
-        english: "Supplier", spanish: "Proveedor"
+    "For Sale" : {
+        english: "For Sale", spanish: "Proveedor"
     },
     "Inventory" : {
         english: "Inventory", spanish: "Inventario"

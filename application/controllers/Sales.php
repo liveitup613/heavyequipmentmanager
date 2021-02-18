@@ -1035,7 +1035,7 @@ class Sales extends CI_Controller
         $startDate = $this->input->post('startDate');
         $endDate = $this->input->post('endDate');
 
-        $DealTypeArray = array('Auction', 'Supplier', 'Consignment');
+        $DealTypeArray = array('Auction', 'For Sale', 'Consignment');
 
         $this->db->select('DealID, ID');
         if ($interval != 0) 

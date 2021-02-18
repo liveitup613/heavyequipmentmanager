@@ -411,7 +411,7 @@
                                                 <option value='No Deal'><?php echo lang('No Deal');?></option>
                                                 <option value='Auction'><?php echo lang('Auction');?></option>
                                                 <option value='Inventory'><?php echo lang('Inventory');?></option>
-                                                <option value='Supplier'><?php echo lang('Supplier');?></option>
+                                                <option value='For Sale'><?php echo lang('For Sale');?></option>
                                                 <option value='Consignment'><?php echo lang('Consignment');?></option>
                                                 <option value='Manufacturing'><?php echo lang('Manufacturing');?></option>
                                                 <option value='Logistics'><?php echo lang('Logistics');?></option>

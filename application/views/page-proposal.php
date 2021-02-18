@@ -256,7 +256,7 @@ header('Expires: 0');
                                         <select class="custom-select" id="DealType" name="DealType" onchange="onChangeDealType()">
                                             <option value="All Deals"><?php echo lang('All');?></option>
                                             <option value="Auction"><?php echo lang('Auction');?></option>
-                                            <option value="Supplier"><?php echo lang('Supplier');?></option>
+                                            <option value="For Sale"><?php echo lang('For Sale');?></option>
                                             <option value="Consignment"><?php echo lang('Consignment');?></option>
                                             <option value="Inventory"><?php echo lang('Inventory');?></option>                                            
                                         </select>

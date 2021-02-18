@@ -681,7 +681,7 @@ function renderPDFPreview() {
                     $('#deal_type').html('Subasta');                                   
                 else if (full.DealType == 'Inventory') 
                     $('#deal_type').html('Inventario');                
-                else if (full.DealType == 'Supplier')
+                else if (full.DealType == 'For Sale')
                     $('#deal_type').html('Proveedor');
                 else if (full.DealType == 'Consignment')
                     $('#deal_type').html('Consignación');
