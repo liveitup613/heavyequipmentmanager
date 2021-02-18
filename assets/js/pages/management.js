@@ -3690,7 +3690,7 @@ function getActiveDealsStatus() {
             var total = data.Auction + data.ForSale + data.Consignment + data.Inventory;
 
             $('#AuctionCount').html(data.Auction);
-            $('#For SaleCount').html(data.ForSale);
+            $('#ForSaleCount').html(data.ForSale);
             $('#ConsignmentCount').html(data.Consignment);
             $('#InventoryCount').html(data.Inventory);
 
@@ -3727,7 +3727,7 @@ function getTodayAddedDealStatus() {
             var total = data.Auction + data.ForSale + data.Consignment + data.Inventory;
 
             $('#AddedAuctionCount').html(data.Auction);
-            $('#AddedFor SaleCount').html(data.ForSale);
+            $('#AddedForSaleCount').html(data.ForSale);
             $('#AddedConsignmentCount').html(data.Consignment);
             $('#AddedInventoryCount').html(data.Inventory);
 

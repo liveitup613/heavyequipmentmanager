@@ -240,7 +240,7 @@ header('Expires: 0');
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Active Deals');?></h6>
                                 <div class="card-value text-success float-left mr-3 pr-2 border-right" id='ActiveDealsCount'>0</div>
                                 <div class="font-12"><?php echo lang('Auction');?> <span class="float-right" id='AuctionCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='For SaleCount'>0</span></div>
+                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='ForSaleCount'>0</span></div>
                             </div>
                         </div>
                     </div>   
@@ -261,7 +261,7 @@ header('Expires: 0');
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Added Deals');?></h6>
                                 <div class="card-value text-info float-left mr-3 pr-2 border-right" id='AddedDealsCount'>0</div>
                                 <div class="font-12"><?php echo lang('Auction');?> <span class="float-right" id='AddedAuctionCount'>0</span></div>
-                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='AddedFor SaleCount'>0</span></div>
+                                <div class="font-12"><?php echo lang('For Sale');?> <span class="float-right" id='AddedForSaleCount'>0</span></div>
                             </div>
                         </div>
                     </div>       
