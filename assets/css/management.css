@@ -448,84 +448,167 @@ textarea.item-info-content{
 
 .pdfPage{
     width: 800px;
-    height: 1131px;
-    padding:30px 5px 20px 5px;
+    height: 1131px;    
     background : white;
     margin: 10px auto;
     box-shadow: 3px 3px rgba(0,0,0, 0.5);
+    border: 1px solid lightgrey;
 }
 
-.pdfPage-header{
-    width: 790px;
-    height: 100px;
+.pdfPage-header{    
+    height: 110px;
+    width: 800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: Oswald;    
+    border: 0px solid #424242;
+    border-bottom-width: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-header-logo{
+    width: 300px;
+    height: 108px;
+    border: 0px solid #FEC629;
+    border-bottom-width: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pdf-header-logo img{
+    width: 310x;
+    height : 95px;    
+}
+
+.pdf-header-desc-box {
+    width: 500px;
+    height: 100%;
+    border: 0px solid #FEC629;
+    border-bottom-width: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.header-arrow {
+    width: 0px;
+    height: 0px;
+    border: 0px solid #FEC629;
+    border-top-width: 53px;
+    border-bottom-width: 53px;
+    border-left-width: 40px;
+    border-left-color: white;
+}
+
+.pdf-header-desc-box .desc {
+    background-color: #FEC629;
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+}
+
+.pdf-header-desc-box .desc p {
+    margin-bottom: 0px;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.pdf-header-desc-box .desc .heading {
+    font-size: 25px;
+    font-weight: bold;
+    color: #424242;
+    margin-bottom: 4px;
+}
+
+.pdfPage-header .cross-bar {
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    height: 109px;        
+}
+
+.pdfPage-header .cross-bar img {
+    height: 100%;
+}
+.pdfPage-header .cross-bar .line1 {
+    width: 20px;
+    height: 100%;
+    background-color: #424242;
+}
+
+.pdfPage-header .cross-bar .line2 {
+    width: 100px;
+    height: 100%;
+    margin-left: 10px;
+    background-color: #424242;
+}
+
+.pdfPage-footer{
+    width: 800px;
+    height: 110px;    
+    padding: 25px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #424242;
+}
+
+.pdfPage-footer div{
+    width: 50%;
+    padding: 0px 10px;
+    height: 100%;
+}
+
+.pdfPage-footer .right-desc {
+    border: 0px solid #FEC629;
+    border-left-width: 3px;
+}
+
+.pdfPage-footer p{
+    font-size: 10px;
+    color: white;
+    margin-bottom: 5px;
 }
 
 .pdfPage-content{
-    width: 760px;
-    height: 930px;
-    margin-left : 15px;
-}
-.pdfPage-footer{
-    width: 760px;
-    height: 60px;
-    border-top: 6px solid #134a88;      
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-left : 15px;
-}
-.pdfPage-footer>img{
-  width: 600px;
-  height: auto;
-  opacity: 0.7;
-}
-.pdf-header-logo{
-    display: inline-block;
-}
-.pdf-header-logo>img{
-    width: 310x;
-    height : 74px;    
-}
-
-.pdf-header-subject{
-    display: inline-block;
-}
-.pdf-header-subject>img{
-    width: 200px;
-    height: 40px;
-}
-
-.pdf-header-icon-box{
-    width: 465px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-}
-.pdf-header-icon-box>img{
-    width: 75px;
-    height: 75px;
+    width: 800px;
+    height: 912px;    
 }
 
 .pageCell{
-    border-top: 6px solid #134a88;
+    border-bottom: 3px solid #FEC629;
     width: 100%;
-    height: auto;
-    margin: 8px 0;
+    height: 304px;
+    padding: 35px 15px 45px 35px;
     display: flex;
     align-items: center;   
     justify-content: space-between; 
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-    font-family: Oswald;
+    position: relative;
+}
+
+.pageCell .pageCell-arrow {
+    position: absolute;
+    border: 60px solid #FEC629;
+    /* opacity: 0.5; */
+    border-right-color: transparent;
+    border-top-color: transparent;
+    bottom: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.pdfPage-content .pageCell .modal-photo-cell {
+    width: 320px !important;
+    height: 224px !important;    
 }
 
 #pdfModal .imageCell{
     width: 320px;
-    height: 250px;
+    height: 224px;
     margin-right: 30px;
 }
 
@@ -534,6 +617,7 @@ textarea.item-info-content{
     height: 230px;
     margin-right: 30px;
 }
+
 .imageCell-post{
     width: 960px;
     height: 750px;   
@@ -542,45 +626,147 @@ textarea.item-info-content{
 
 #pdfModal .contentCell{
     width: 470px;
-    height: auto;
-}
-
-#publishModal .contentCell{
-    width:300px;
-    height: auto;
-    padding-right: 10px;
+    height: 224px;
 }
 
 .pdf-title{
-    color:#f5862c;
+    color: black;
     font-weight: 700;
-    line-height: 1.0;
-    margin-bottom: 5px;
+    /* line-height: 1.0; */
+    margin-bottom: 0px;
     text-transform: uppercase;
-    font-size: 25px;
-}
-#publishModal .pdf-total-price{
-    text-align: center;
-    font-size: 24px;
-    font-weight: bolder;
-    padding: 1px 20px;
-    color: white;
-    width:165px;
-    height: 30px;
-    line-height: 24px;
-    background-color: #134a88;
+    font-size: 18px;
 }
 
-#pdfModal .pdf-total-price {
-    font-size: 24px;
-    font-weight: bolder;
-    padding: 1px 20px;
-    color: white;
-    width: 220px;
-    height: 30px;
-    line-height: 24px;
-    background-color: #134a88;
+.pdf-location {
+    font-size: 10px;
+    font-weight: 600;
+    color: #424242;
+    margin-bottom: 5px;
 }
+
+.pdfPage-content .item-content{
+    font-size: 7px;
+    font-weight: 600;    
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.pdfPage-content .item-content .item-arrow {
+    border: 2px solid #FEC629;
+    width: 0px;
+    height: 0px;
+    margin-right: 5px;
+}
+
+.pdfPage-content .pdf-info-box {
+    height: 83px;
+}
+
+.pdfPage-content .pdf-price-box {
+    display: flex;
+    height: 24px;
+}
+
+.pdfPage-content .pdf-total-price {
+        /* font-size: 24px; */
+    /* font-weight: bolder; */
+    padding: 1px 5px;
+    color: black;
+    width: 157px;
+    height: 24px;
+    display: flex;
+    align-items: flex-end;
+    /* line-height: 24px; */
+    background-color: #FEC629;
+}
+
+.pdfPage-content .pdf-price-box .pdf-total-price .price-unit {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.pdfPage-content .pdf-price-box .pdf-total-price .price {
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-left: 5px;
+}
+
+.pdfPage-content .pdf-price-box .pdf-price-arrow {
+    border: 12px solid #FEC629;
+    border-right-color: #39B54A;
+}
+
+.pdfPage-content .pdf-price-box .deal_buy_type {
+    background-color: #39B54A;
+    width: 95px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.pdfPage-content .auction-info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pdfPage-content .auction-info-box .auction-arrow {
+    border: 12px solid white;
+    border-right-color: #1B75BC;
+    border-left-width: 0px;
+}
+
+.pdfPage-content .auction-info-box .auction-name {
+    background-color: #1B75BC;
+    height: 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pdfPage-content .auction-info-box .auction-name img {
+    width: 12px;
+    margin-right: 4px;
+}
+
+.pdfPage-content .auction-info-box .auction-date {    
+    background-color: black;
+    height: 24px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.pdfPage-content .auction-info-box .auctioneer-title {
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+    line-height: 12px;
+}
+
+.pdfPage-content .auction-info-box .auctioneer-value {
+    color: #1B75BC;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
 #publishModal .pdf-price-to-bet-box{
     margin-left: 20px;
     width: 105px;
@@ -702,35 +888,48 @@ textarea.item-info-content{
 .pdf-description-box{
     width: 100%;   
     margin-top: 8px;
+    position: relative;
 }
+
+.pdf-description-box .pdf-description-arrow {
+    position: absolute;
+    border: 8px solid white;
+    top: 6px;
+    right: 0px;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+}
+
 .pdf-label5{
     display: inline-block;
-    font-size: 15px;
-    line-height: 17px;
-    text-transform: uppercase;
-    padding: 3px 15px 3px 15px;
-    background-color: #f5862c;
-    color: white; 
-    margin-bottom: 0;  
+    font-size: 11px;
+    line-height: 16px;
+    /* text-transform: uppercase; */
+    padding: 3px;
+    background-color: #424242;
+    color: white;
+    margin-bottom: 0;
+    font-weight: bold;
 }
 
 .pdf-description-content-box{
     width: 100%;
-    height: 90px; 
-    border : 3px solid #134A88; 
+    height: 70px;
+    border: 2px solid #424242;
     border-right-width: 0px;
+    border-bottom-width: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 4px 20px;
+    padding: 4px 10px;
     flex-wrap: wrap;
 }
 .pdf-description-item{
     display: inline-block;
     margin-right: 20px;
-    height: 17px;   
+    height: 14px;
 }
 
 .publish-title{

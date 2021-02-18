@@ -819,10 +819,10 @@ function get_detail_data_for_pdf(data) {
     var detail_list = get_detail_data_for_deal(data);
 
     for (var i = 0; i < detail_list.length; i++) {
-        contentItem += "<div class='pdf-description-item'><span class='item-content'> - " + detail_list[i] + '</span></div>';
+        contentItem += "<div class='pdf-description-item'><span class='item-content'><div class='item-arrow'></div>" + detail_list[i] + '</span></div>';
     }
 
-    contentItem += "<div class='pdf-description-item'><span class='item-content'> - " + data.DealID + '</span></div>';
+    contentItem += "<div class='pdf-description-item'><span class='item-content'><div class='item-arrow'></div>" + data.DealID + '</span></div>';
 
     return contentItem;    
 }

@@ -257,7 +257,7 @@ header('Expires: 0');
                     </div> 
                     <div class="col-3">
                         <div class="card">
-                            <div class="body" style='height: 160px;'>>
+                            <div class="body" style='height: 160px;'>
                                 <h6 class="mb-4"><i class="fa fa-gavel"></i> <?php echo lang('Added Deals');?></h6>
                                 <div class="card-value text-info float-left mr-3 pr-2 border-right" id='AddedDealsCount'>0</div>
                                 <div class="font-12"><?php echo lang('Auction');?> <span class="float-right" id='AddedAuctionCount'>0</span></div>
