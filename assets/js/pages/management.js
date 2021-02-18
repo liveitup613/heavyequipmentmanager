@@ -92,11 +92,11 @@ var columnData = [
             var dealBan = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Alert Broken Link') + '" onclick="onMarkDeal(' + full.ID + ')"><i class="icon-check"></i></button>';            
             var procurement = '';
             
-            if ($('#permission').val() == 'admin' || $('#accounting').val() == 'ON')
-                procurement = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Buy') + '" onclick="onProcurement(' + full.ID + ')"><i class="icon-basket"></i></button>';            
+            // if ($('#permission').val() == 'admin' || $('#accounting').val() == 'ON')
+            //     procurement = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Buy') + '" onclick="onProcurement(' + full.ID + ')"><i class="icon-basket"></i></button>';            
             
-            if (full.DealStatus == 'PendingProcurement' || full.DealType == 'Inventory')
-                procurement = '';
+            // if (full.DealStatus == 'PendingProcurement' || full.DealType == 'Inventory')
+            //     procurement = '';
 
             if (full.MarkForExit == 'YES')
                 dealBan = '<button  class="col-lg-4 btn btn-sm btn-default btn-action"  data-toggle="tooltip" data-placement="top" title="' + getLocalizationWord('Remove Alert') + '" onclick="onUnmarkDeal(' + full.ID + ')"><i class="icon-ban"></i></button>';            
