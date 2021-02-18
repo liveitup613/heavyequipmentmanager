@@ -425,7 +425,7 @@ header('Expires: 0');
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li onclick="onAllDownload(0)"><i class="fa  fa-angle-right"></i> &nbsp;<?php echo lang('Without Banner');?></li>
-                                    <li onclick="onAllDownload(1)"><i class="fa  fa-angle-right"></i> &nbsp;<?php echo lang('With Banner');?></li>
+                                    <!-- <li onclick="onAllDownload(1)"><i class="fa  fa-angle-right"></i> &nbsp;<?php echo lang('With Banner');?></li> -->
                                 </ul>
                             </li>
                         </ul>
@@ -636,9 +636,7 @@ header('Expires: 0');
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="publish('MaquinariaJr')" id="btnPublishToMaqui">
-                    </button>
+                <div class="modal-footer">                    
                     <a href="#" id="fb_share" class="fa fa-facebook share-btn"></a>
                     <a href="#" id="wa_share" class="fa fa-whatsapp share-btn"></a>
                     <a href="#" id="google_share" class="fa fa-google share-btn"></a>

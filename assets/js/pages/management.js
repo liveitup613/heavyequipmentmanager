@@ -240,15 +240,6 @@ var columnData = [
         "title": getLocalizationWord("Published"),
         sortable: false,
         render: function (data, type, full, meta) {
-            var maquinariaJR = '';
-            
-            if (full.MaquinariaJRLink != '') {
-                maquinariaJR = '<button class="col-lg-4 btn btn-sm btn-default" style="padding:4px 0px; margin:0;" data-toggle="tooltip" data-placement="top" title="LINK TO MAQUINARIA JR" onclick="gotoLink(\'' + full.MaquinariaJRLink + '\')"><img class="publish-icon" src="assets/images/publish_icon/maquinaria_active_icon.png"></button>';
-            }
-            else {
-                maquinariaJR = '';
-            }
-
             var publishButtons = '';
             var Platforms = full.PostedPlatforms;
             if(Platforms.length) {
@@ -269,7 +260,7 @@ var columnData = [
             }
 
             return '<div class="row" style = "width : 125px; padding-left : 5px;">' +
-                    maquinariaJR + publishButtons +
+                    publishButtons +
                 '</div>';
         }
     }, {
@@ -2126,15 +2117,7 @@ function renderPublishModal(DealID) {
 
             var EqCategory = data.detail.EqCategory;
 
-            if (EqCategory == 'Other') {
-                $('#btnPublishToMaqui').hide();
-            }
-            else {
-                $('#btnPublishToMaqui').show();
-            }
-
-            var is_maq_active = (data.detail.MaquinariaJRLink) ? 'maquinaria_active' : 'maquinaria_deactive';
-            $("#btnPublishToMaqui").attr('class', 'btn btn-default '+is_maq_active);
+            var is_maq_active = (data.detail.MaquinariaJRLink) ? 'maquinaria_active' : 'maquinaria_deactive';            
             $("input#title-box").val(data.OgTitle); // set value of title input
             $("textarea#des-box").val(data.OgDescription); // set value of description textbox
 
