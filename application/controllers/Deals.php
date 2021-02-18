@@ -2705,7 +2705,7 @@ class Deals extends CI_Controller
 
         echo json_encode(array(
             'Auction' => $auction,
-            'For Sale' => $ForSale,
+            'ForSale' => $ForSale,
             'Consignment' => $consignment,
             'Inventory' => $inventory
         ));
@@ -2741,7 +2741,7 @@ class Deals extends CI_Controller
 
         echo json_encode(array(
             'Auction' => $auction,
-            'For Sale' => $ForSale,
+            'ForSale' => $ForSale,
             'Consignment' => $consignment,
             'Inventory' => $inventory
         ));
