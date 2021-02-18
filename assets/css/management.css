@@ -606,15 +606,9 @@ textarea.item-info-content{
     height: 224px !important;    
 }
 
-#pdfModal .imageCell{
+.imageCell{
     width: 320px;
     height: 224px;
-    margin-right: 30px;
-}
-
-#publishModal .imageCell{
-    width: 440px;
-    height: 230px;
     margin-right: 30px;
 }
 
@@ -624,7 +618,7 @@ textarea.item-info-content{
     /*margin-right: 30px;*/
 }
 
-#pdfModal .contentCell{
+.contentCell{
     width: 470px;
     height: 224px;
 }
@@ -1476,21 +1470,10 @@ input#title-box {
 .table-publish .pdfPage {
     width: 800px;
     height: auto;
-    padding: 7px 5px 0px 5px;
     background: white;
     margin: 10px auto;
     box-shadow: 3px 3px rgba(0,0,0, 0.5);
-    border: 5px solid #f68320;
-}
-
-.table-publish .pdfPage {
-    width: 800px;
-    height: auto;
-    padding: 7px 5px 0px 5px;
-    background: white;
-    margin: 10px auto;
-    box-shadow: 3px 3px rgba(0,0,0, 0.5);
-    border: 5px solid #f68320;
+    
 }
 
 .preview-content .modal-header, .preview-content .modal-footer {
@@ -1564,28 +1547,13 @@ a.share-btn:hover {
     border: 1px solid white;
 }
 
-.preview-content .pdf-description-content-box {
-    width: 100%;
-    height: 90px;
-    border: 3px solid #134A88;
-    border-right-width: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    padding: 4px 20px;
-    flex-wrap: wrap;
-}
-
 .preview-content .pdf-header-icon-box {
     margin-right: 10px;
 }
 
 .preview-content .pdfPage-content {
-    width: 760px;
-    height: auto;
-    margin-left: 15px;
+    width: 800px;
+    height: auto;    
 }
 
 .generate-link-part {
