@@ -2103,7 +2103,7 @@ function set_preview_common_value_from_input_element() {
     var City;
     if ($('#City').length) {
         City = $('#City').val();
-        if (City) {
+        if (City && City != '') {
             City += ', ';
         }
     }

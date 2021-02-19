@@ -823,7 +823,16 @@ function renderModalTB() {
                             contentItem += '<div class="contentCell">';
 
                             var title = getTitleFromDatabase(full);                                
-                            var location = full.City.trim() + ', '+ full.State.trim() + ', ' + full.Country.trim();
+                            var city = full.City.trim();
+                            var state = full.State.trim();
+                            var country = full.Country.trim();
+                            var location = '';
+
+                            if (city != '')
+                                location = city + ', ';
+                            if (state != '')
+                                location += state + ', ';
+                            location += country;
 
                             contentItem += "<h3 class='pdf-title'>" + title + "</h3>";
                             contentItem += '<p class="pdf-location">' + location + '</p>';

@@ -61,13 +61,10 @@ margin: 0;
 
 .preview {
     font-size: 18px !important;
-    color: ghostwhite;
 }
 
 textarea.preview {
-    font-size : 18px;
-    color : white;
-    background-color: rgb(40, 43, 47);
+    font-size : 18px;    
     width: 350px;
     border-width: 0px;
     height: 100px;
