@@ -91,7 +91,6 @@ class Deal_model extends CI_Model
         $searchText,
         $start,
         $length,
-        $tvMode,
         $published,
         $marked,
         $category,
@@ -117,14 +116,6 @@ class Deal_model extends CI_Model
             $field = 'viewActiveDeals.EqModel';
         }
 
-        $tvmodeArray = array('yes', 'no');
-
-        if($tvMode == 'yes'){
-            $tvmodeArray = array('yes');
-        } else if ($tvMode == 'no') {
-            $tvmodeArray = array('no');
-        }        
-
         $this->db->select('viewActiveDeals.*');        
         $this->db->from('viewActiveDeals');        
 
@@ -138,8 +129,6 @@ class Deal_model extends CI_Model
             $this->db->where('viewActiveDeals.MaquinariaJRLink', '');
         if ($marked == 'yes') 
             $this->db->where('viewActiveDeals.MarkForExit', 'YES');
-
-        $this->db->where_in('viewActiveDeals.TvMode', $tvmodeArray);
 
         if ($searchText != '')   {
             $words = explode('+', $searchText);

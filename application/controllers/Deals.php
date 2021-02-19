@@ -1091,8 +1091,7 @@ class Deals extends CI_Controller
         $minTotal = $this->input->post('minTotal');
         $maxTotal = $this->input->post('maxTotal');
         $minLiftCapacity = $this->input->post('minLiftCapacity');
-        $maxLiftCapacity = $this->input->post('maxLiftCapacity');
-        $tvMode = $this->input->post('tvMode');
+        $maxLiftCapacity = $this->input->post('maxLiftCapacity');        
         $published = $this->input->post('published');
         $marked = $this->input->post('marked');
 
@@ -1114,7 +1113,6 @@ class Deals extends CI_Controller
             $searchText,
             $start,
             $length,
-            $tvMode,
             $published,
             $marked,
             $categoryName,

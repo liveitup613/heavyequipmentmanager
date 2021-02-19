@@ -356,14 +356,6 @@ header('Expires: 0');
                                             </div>
                                         </div>
 
-                                        <div class="filter-TV-mode" style="width: 240px; margin-left: 16px;">
-                                            <span><?php echo lang('TvMode');?>:</span>
-                                            <select style="width: 150px;" class="custom-select" id="inputTvMode" name="TvMode">
-                                                <option value="all"><?php echo lang('All');?></option>
-                                                <option value="yes"><?php echo lang('YES');?></option>
-                                                <option value="no"><?php echo lang('NO');?></option>
-                                            </select>
-                                        </div>
                                         <div class="filter-published" style="width: 250px;">
                                             <span><?php echo lang('Published');?>:</span>
                                             <select style="width: 150px;" class="custom-select" id="inputPublished" name="TvMode">
@@ -516,7 +508,7 @@ header('Expires: 0');
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div style="font-size: 15px; color: white; padding-left: 30px;">
+                    <div style="font-size: 15px; color: black; padding-left: 30px;">
                         <?php echo lang('Delete Pictures?');?>
                     </div>
                 </div>
@@ -563,7 +555,7 @@ header('Expires: 0');
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div style="font-size: 15px; color: white; padding-left: 30px;">
+                    <div style="font-size: 15px; color: black; padding-left: 30px;">
                         <?php echo lang('Delete Video?');?>
                     </div>
                 </div>
@@ -745,7 +737,7 @@ header('Expires: 0');
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div style="font-size: 15px; color: white; padding-left: 30px;">
+                    <div style="font-size: 15px; color: black; padding-left: 30px;">
                         <?php echo lang('Delete Deal?');?>
                     </div>
                 </div>
