@@ -889,7 +889,7 @@ function renderModalTB() {
                         }
                         contentItem += '</div>';
                         contentItem += '<div class="pdfPage-footer">';
-                        contentItem += '<div class="left-desc"><p><strong>Machinery Hawkers |</strong> Avenida Blvd. Abelardo R. Rodriguez 2292 col. alamitos C.P.21210, Mexicali B.C. | (+52) 81 1170 0354 / 81 1170 0354 | hola@machineryhawkers.com</p><p><strong>https://compramaquinaria.com/machinery-hawkers</strong></p></div><div class="right-desc"><p><strong>Somos tu mejor opción para compra de maquinaria pesada en Tijuana México, tenemos mas de 10 años de experiencia, confia en la compañia mas efectiva de E.U.A / MEX.</strong></p></div>';
+                        contentItem += '<div class="left-desc"><p><strong>Machinery Hawkers |</strong> Blvd. Abelardo R. Rodriguez 2292 col. alamitos C.P.21210, Mexicali B.C. | (+52) 686 172 1838 | ventas@machineryhawkers.com</p><p><strong>https://compramaquinaria.com/machinery-hawkers</strong></p></div><div class="right-desc"><p><strong>Somos tu mejor opción para compra de maquinaria pesada en Tijuana México, tenemos mas de 10 años de experiencia, confia en la compañia mas efectiva de E.U.A / MEX.</strong></p></div>';
                         contentItem += '</div>';
                         contentItem += '</div>';
                     }
