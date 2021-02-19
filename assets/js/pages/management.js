@@ -721,6 +721,37 @@ function renderModalTB() {
 
     $('.table-pdf').html('');
 
+    var userName = '';
+    var userEmail = '';
+    var userPhone = '';
+    $.ajax({
+        url: base_url + 'User/GetUserInfo',
+        type: 'get',
+        data: {
+            ID: $('#userIDInput').val()
+        },
+        async: false,
+        timeout: 3000,
+        success: function(res) {
+            var result = JSON.parse(res);
+            if (result.success == false) {
+                return;
+            }
+
+            var userData = result.user;
+            userName = userData.USERNAME;
+            userEmail = userData.EMAIL;
+            userPhone = userData.PHONE;
+        }
+    });
+
+    if (userName == '' && userPhone == '' && userEmail == '') {
+        toastr.error("Get User Data Error", 'HEM');
+        $('#pdfModal').modal('hide');
+        hiddenSpinner;
+        return;
+    }
+
     $.ajax(
         {
             url: base_url + 'Deals/getTruckDataForPdf',
@@ -760,7 +791,7 @@ function renderModalTB() {
                         contentItem += '<div class="pdf-header-logo">';
                         contentItem += '<img src="' + base_url + 'assets/images/icon/pdf_logo.png"/>';
                         contentItem += '</div>';
-                        contentItem += '<div class="pdf-header-desc-box"><div class="header-arrow"></div><div class="desc"><p class="heading">OFERTAS DE COMPRA</p><p><strong>VENDEDOR:</strong> Raúl Pacheco</p><p><strong>Tel:</strong> (+52) 81 1170 0354</p><p><strong>Mail:</strong> rpacheco@machineryhaunters.com</p></div></div>';
+                        contentItem += '<div class="pdf-header-desc-box"><div class="header-arrow"></div><div class="desc"><p class="heading">OFERTAS DE COMPRA</p><p><strong>VENDEDOR:</strong> ' + userName + '</p><p><strong>Tel:</strong> ' + getStyledPhoneNumber(userPhone) + '</p><p><strong>Mail:</strong> ' + userEmail + '</p></div></div>';
                         contentItem += '<div class="cross-bar"><img src="' + base_url + 'assets/images/icon/header-cross.png' + '"></div>'
                         contentItem += '</div>';
                         contentItem += '<div class="pdfPage-content">';
@@ -802,7 +833,7 @@ function renderModalTB() {
                             if (full.DealType == 'Auction') {
 
                                 contentItem += '<div class="auction-info-box">';
-                                contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subast</div>';
+                                contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
                                 contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
                                 contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
                                 contentItem += '</div>';
@@ -813,9 +844,10 @@ function renderModalTB() {
                                     
                                     contentItem += '<div class="pdf-price-box">';
                                     contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                    contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Comprálo Ya!</div>';
+                                    contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                     contentItem += '</div>';
-                                    contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
+                                    contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                    contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
                                 }
 
                             } else if (full.DealType == 'For Sale') {
@@ -825,16 +857,18 @@ function renderModalTB() {
                                 
                                 contentItem += '<div class="pdf-price-box">';
                                 contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ VentA</div>';
+                                contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Venta</div>';
                                 contentItem += '</div>';
-                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
+                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                
                                 
                             }
 
                             contentItem += '</div>';
                             contentItem += '<div class="pdf-description-box">';
                             contentItem += '<div class="pdf-description-arrow"></div>';
-                            contentItem += '<div class="pdf-label5">Descripción</div>'
+                            contentItem += '<div class="pdf-label5">Detalles</div>'
                             contentItem += '<div class="pdf-description-content-box">';
                             ///////////// special fields //////////////////////////////////////////////
                             contentItem += get_detail_data_for_pdf(full);
@@ -1818,7 +1852,7 @@ function renderPublishModal(DealID) {
                                     if (full.DealType == 'Auction') {
 
                                         contentItem += '<div class="auction-info-box">';
-                                        contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subast</div>';
+                                        contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
                                         contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
                                         contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
                                         contentItem += '</div>';
@@ -1829,9 +1863,10 @@ function renderPublishModal(DealID) {
                                             
                                             contentItem += '<div class="pdf-price-box">';
                                             contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                            contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Comprálo Ya!</div>';
+                                            contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                             contentItem += '</div>';
-                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
+                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';  
                                         }
 
                                     } else if (full.DealType == 'For Sale') {
@@ -1841,16 +1876,17 @@ function renderPublishModal(DealID) {
                                         
                                         contentItem += '<div class="pdf-price-box">';
                                         contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
-                                        contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ VentA</div>';
+                                        contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Venta</div>';
                                         contentItem += '</div>';
-                                        contentItem += '<span style="font-size: 7px;color: black;font-weight: bold;">*Precio no Incluye I.V.A.</span>';
+                                        contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                        contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
                                         
                                     }
 
                                     contentItem += '</div>';
                                     contentItem += '<div class="pdf-description-box">';
                                     contentItem += '<div class="pdf-description-arrow"></div>';
-                                    contentItem += '<div class="pdf-label5">Descripción</div>'
+                                    contentItem += '<div class="pdf-label5">Detalles</div>'
                                     contentItem += '<div class="pdf-description-content-box">';
                                     ///////////// special fields //////////////////////////////////////////////
                                     contentItem += get_detail_data_for_pdf(full);

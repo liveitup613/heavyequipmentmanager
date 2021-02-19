@@ -41,7 +41,7 @@ function confirm_logout() {
                             '</button>' +
                           '</div>' +
                           '<div class="modal-body">' +
-                            '<div style="font-size: 15px; color: white; padding-left: 30px;">' +
+                            '<div style="font-size: 15px; color: black; padding-left: 30px;">' +
                               'Remain Logged in?' +
                             '</div>' +
                           '</div>' +

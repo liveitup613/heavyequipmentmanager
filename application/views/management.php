@@ -139,7 +139,7 @@ header('Expires: 0');
                     </div>
                     <div class="dropdown">
                         <a href="javascript:void(0);" class=" user-name" data-toggle="dropdown" style="margin-top: 10px;"><strong><?php echo $FULLNAME; ?></strong></a>
-                        <span style="font-size: 10px; display:none;"><?php echo $PERMISSION; ?></span><input type="hidden" id="usernameInput" value="<?php echo $USERNAME; ?>" />
+                        <span style="font-size: 10px; display:none;"><?php echo $PERMISSION; ?></span><input type="hidden" id="usernameInput" value="<?php echo $USERNAME; ?>" /><input type="hidden" id="userIDInput" value="<?php echo $ID; ?>" />
                     </div>
                 </div>
 
