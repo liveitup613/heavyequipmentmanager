@@ -483,15 +483,6 @@ class Maintenance extends CI_Controller
 
         if ($getID == null) {
 
-            //log
-            $data = array(
-                'UserID' => $this->session->userdata('ID'),
-                'Action' => 'Add Deal',
-                'Objective' => 'No ID',
-                'Result' => 'error'
-            );
-            $this->Log_model->addLog($data);
-
             echo json_encode(array('success' => false, 'message' => 'Add Deal Error'));
             return;
         }
@@ -569,16 +560,6 @@ class Maintenance extends CI_Controller
             );
             $this->db->insert('tblresource', $pictureData);
         }
-
-        //Log 
-
-        $data = array(
-            'UserID' => $this->session->userdata('ID'),
-            'Action' => 'Add Truck',
-            'Objective' => $getID,
-            'Result' => 'Success'
-        );
-        $this->Log_model->addLog($data);
 
         echo json_encode(array('success' => true, 'picture' => array('ID' => $getID, 'url' => base_url($destUrl), 'pmW' => $width, 'pmH' => $height)));
     }
