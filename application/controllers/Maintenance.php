@@ -582,4 +582,19 @@ class Maintenance extends CI_Controller
 
         echo json_encode(array('success' => true, 'picture' => array('ID' => $getID, 'url' => base_url($destUrl), 'pmW' => $width, 'pmH' => $height)));
     }
+
+    public function resizeImage($source, $width, $height, $maintain_ratio = FALSE) {
+        $this->load->library('image_lib');
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $source;
+        $config['create_thumb'] = FALSE;
+        $config['maintain_ratio'] = $maintain_ratio;
+        $config['width'] = $width;
+        $config['height'] = $height;
+        $config['quality'] = '100%';
+
+        $this->image_lib->clear();
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();
+    }
 }
