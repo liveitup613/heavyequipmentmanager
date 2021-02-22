@@ -2517,8 +2517,12 @@ function getStyledPhoneNumber(phone) {
     if (phone == null)
         return '';
     
-    if (phone.length < 11)
-        return phone;
+    if (phone.length < 11) {
+        var countryCode = phone.substr(0, 3);
+        var stateCode = phone.substr(3, 3);
+        var cityCode = phone.substr(6, 4);
+        return countryCode + ' ' + stateCode + ' ' + cityCode;
+    }
 
     var index = 0;
     for (index = 0; index < countryCodes.length; index++) {
