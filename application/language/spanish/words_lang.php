@@ -8,7 +8,7 @@
   * Menu
   */
 
-$lang['Home']                               = 'Hogar';
+$lang['Home']                               = 'Inicio';
 $lang['Deals']                              = 'Tratos';
     $lang['Management']                     = 'Administración';
     $lang['Watch List']                     = 'Lista de Seguimiento';
