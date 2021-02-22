@@ -275,7 +275,7 @@ class Maintenance extends CI_Controller
         $Commission = $this->input->post('Commission');
         $PrimaryImage = "";
         $Total = $this->input->post('Total');
-        $UserID = 1;
+        $UserID = 3;
         $DateAdded = date('Y-m-d H:i:s');
         $Contact = $this->input->post('Contact');
         $ContactPhone = $this->input->post('FullContactPhone');
