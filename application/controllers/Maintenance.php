@@ -249,4 +249,337 @@ class Maintenance extends CI_Controller
                 $this->Activity_model->add('System', 'Unpublish Ended Auction', 'tblDeals', $row['ID'], 'Maintenance', 'Error', 'Error Occured', '');
         }
     }
+
+    public function addNewDeal() {
+        $this->load->model('Deal_model');
+        $eqCategory = $this->input->post("EqCategory");
+        $dealType = $this->input->post('DealType');
+
+        $mkTitle = $this->input->post('mkTitle');
+        $mkDescription = $this->input->post('mkDescription');
+        $EqYear = $this->input->post('EqYear');
+        $EqMake = $this->input->post('EqMake');
+        $EqModel = $this->input->post('EqModel');
+        $EqSN = $this->input->post('EqSN');
+        $Country = $this->input->post('Country');
+        $State = $this->input->post('State');
+        $City = $this->input->post('City');
+        $StartDate = $this->input->post('StartDate');
+        $EndDate = $this->input->post('EndDate');
+        $Auctioneer = $this->input->post('Auctioneer');
+        $Link = $this->input->post('Link');
+        $BuyPremium = $this->input->post('BuyPremium');
+        $Price = $this->input->post('Price');
+        $Shipping = $this->input->post('Shipping');
+        $Customs = $this->input->post('Customs');
+        $Commission = $this->input->post('Commission');
+        $PrimaryImage = "";
+        $Total = $this->input->post('Total');
+        $UserID = 1;
+        $DateAdded = date('Y-m-d H:i:s');
+        $Contact = $this->input->post('Contact');
+        $ContactPhone = $this->input->post('FullContactPhone');
+        $CompanyName = $this->input->post('CompanyName');
+        $Margin = $this->input->post('Margin');
+        $Warehouse = $this->input->post('Warehouse');
+        $Suspension = $this->input->post('Suspension');
+        $HorsePower = $this->input->post('HorsePower');
+
+        //// special fields///////
+        $TruckYear = $this->input->post('TruckYear');
+        $TruckMake = $this->input->post('TruckMake');
+        $TruckModel =  $this->input->post('TruckModel');
+        $Engine =  $this->input->post('Engine');
+        $TruckTrans =  $this->input->post('TruckTrans');
+        $TruckCondition =  $this->input->post('TruckCondition');
+        $TruckConditionUnit = $this->input->post('TruckCondUnit');
+        $Capacity =  $this->input->post('Capacity');
+        $Meters =  $this->input->post('Meters');
+        $Length =  $this->input->post('Length');
+        $LengthUnit = $this->input->post('LengthUnit');
+        $Type =  $this->input->post('Type');
+        $Hours =  $this->input->post('Hours');
+        $Cab =  $this->input->post('Cab');
+        $wd =  $this->input->post('4WD');
+        $Ext =  $this->input->post('Ext');
+        $AuxHyd =  $this->input->post('AuxHyd');
+        $Ripper = $this->input->post('Ripper');
+        $Note = $this->input->post("Note");
+
+        $truckData = array();
+        $truckData['DealType'] = $dealType;
+        $truckData['EqCategory'] = $eqCategory;
+        $truckData['Note'] = $Note;
+
+        if ($EqYear != NULL) {
+            $truckData['EqYear'] = $EqYear;
+        }
+        else {
+            if ($TruckYear != NULL) {
+                $truckData['EqYear'] = $TruckYear;
+            }
+        }
+
+        if ($EqMake != NULL) {
+            $truckData['EqMake'] = $EqMake;
+        }
+        else {
+            if ($TruckMake != NULL) {
+                $truckData['EqMake'] = $TruckMake;
+            }
+        }
+
+        if ($EqModel != NULL) {
+            $truckData['EqModel'] = $EqModel;
+        }
+        else{
+            if ($TruckModel != NULL) {
+                $truckData['EqModel'] = $TruckModel;
+            }
+        }
+
+        if ($EqSN != NULL) {
+            $truckData['EqSN'] = $EqSN;
+        }
+        if ($Country != NULL) {
+            $truckData['Country'] = $Country;
+        }
+        if ($State != NULL) {
+            $truckData['State'] = $State;
+        }
+        if ($City != NULL) {
+            $truckData['City'] = $City;
+        }
+        if ($Warehouse != NULL) {
+            $truckData['Warehouse'] = $Warehouse;
+        }
+
+        if ($StartDate != NULL) {
+            $truckData['StartDate'] = $StartDate;
+        }
+        if ($EndDate != NULL) {
+            $truckData['EndDate'] = $EndDate;
+        }
+        if ($Auctioneer != NULL) {
+            if ($dealType == 'Auction') {
+                $truckData['Auctioneer'] = $Auctioneer;
+            } else {
+                $truckData['Auctioneer'] = '';
+            }
+        }
+        if ($Contact != NULL) {
+            $truckData['Contact'] = $Contact;
+        }
+        if ($ContactPhone != NULL) {
+            $truckData['ContactPhone'] = $ContactPhone;
+        }
+        if ($CompanyName != NULL) {
+            $truckData['CompanyName'] = $CompanyName;
+        }
+        if ($Link != NULL) {
+            $truckData['Link'] = $Link;
+            if (strpos($Link, 'https://www.rbauction.com/') !== false) {
+                $invIdPos = strpos($Link, 'invId');
+                $idPos = strpos($Link, '&id');
+                $invId = substr($Link, $invIdPos + 6, 8);
+                $truckData['SourceID'] = $invId;
+            }
+        }
+        if ($BuyPremium != NULL) {
+            $truckData['BuyPremium'] = $BuyPremium;
+        }
+        if ($Price != NULL) {
+            $truckData['Price'] = $Price;
+        }
+        if ($Margin != NULL) {
+            $truckData['Margin'] = $Margin;
+        }
+        if ($Shipping != NULL) {
+            $truckData['Shipping'] = $Shipping;
+        }
+        if ($Customs != NULL) {
+            $truckData['Customs'] = $Customs;
+        }
+        if ($Commission != NULL) {
+            $truckData['Commission'] = $Commission;
+        }
+        if ($Total != NULL) {
+            $truckData['Total'] = $Total;
+        }
+        if ($mkTitle != NULL) {
+            $truckData['mkTitle'] = $mkTitle;
+        }
+        if ($mkDescription != NULL) {
+            $truckData['mkDescription'] = $mkDescription;
+        }
+        if ($PrimaryImage != NULL) {
+            $truckData['PrimaryImage'] = $PrimaryImage;
+        }
+        if ($UserID != NULL) {
+            $truckData['UserID'] = $UserID;
+        }
+
+        if ($DateAdded != NULL) {
+            $truckData['DateAdded'] = $DateAdded;
+        }
+        if ($TruckYear != NULL) {
+            $truckData['TruckYear'] = $TruckYear;
+        }
+        if ($TruckMake != NULL) {
+            $truckData['TruckMake'] = $TruckMake;
+        }
+        if ($TruckModel != NULL) {
+            $truckData['TruckModel'] = $TruckModel;
+        }
+        if ($Engine != NULL) {
+            $truckData['Engine'] = $Engine;
+        }
+        if ($TruckTrans != NULL) {
+            $truckData['TruckTrans'] = $TruckTrans;
+        }
+        if ($TruckCondition != NULL) {
+            $truckData['TruckCondition'] = $TruckCondition . ' ' . $TruckConditionUnit;
+        }
+        if ($Capacity != NULL) {
+            $truckData['Capacity'] = $Capacity;
+        }
+        if ($Meters != NULL) {
+            $truckData['Meters'] = $Meters;
+        }
+        if ($Length != NULL) {
+            $truckData['Length'] = $Length . ' ' . $LengthUnit;
+        }
+        if ($Type != NULL) {
+            $truckData['Type'] = $Type;
+        }
+        if ($Hours != NULL) {
+            $truckData['Hours'] = $Hours;
+        }
+        if ($Cab != NULL) {
+            $truckData['Cab'] = $Cab;
+        }
+        if ($wd != NULL) {
+            $truckData['4WD'] = $wd;
+        }
+        if ($Ext != NULL) {
+            $truckData['Ext'] = $Ext;
+        }
+        if ($AuxHyd != NULL) {
+            $truckData['AuxHyd'] = $AuxHyd;
+        }
+        if ($Ripper != NULL) {
+            $truckData['Ripper'] = $Ripper;
+        }
+        if ($Suspension != NULL) {
+            $truckData['Suspension'] = $Suspension;
+        }
+        if ($HorsePower != NULL) {
+            $truckData['Ripper'] = $HorsePower;
+        }
+
+
+        $this->db->insert('tblDeals', $truckData);
+        $getID = $this->db->insert_id();
+
+        if ($getID == null) {
+
+            //log
+            $data = array(
+                'UserID' => $this->session->userdata('ID'),
+                'Action' => 'Add Deal',
+                'Objective' => 'No ID',
+                'Result' => 'error'
+            );
+            $this->Log_model->addLog($data);
+
+            echo json_encode(array('success' => false, 'message' => 'Add Deal Error'));
+            return;
+        }
+
+        $this->db->set('DealID', 'concat("HK", LPAD(ID, 6, "0"))', false);
+        $this->db->where('ID', $getID);
+        $this->db->update('tblDeals');
+
+        $PrimaryImageUrl = $this->input->post('primaryImageUrl');        
+        $fileFilter = explode('.', $PrimaryImageUrl);
+        $fileExt = $fileFilter[count($fileFilter) - 1];
+        
+        $date = new DateTime();
+        $filename = $date->getTimestamp();
+
+        $filename = 'deals' . $filename . '.' . $fileExt;
+
+        $destUrl = 'assets/images/primaryImages/' . $filename;
+        $thumbUrl = 'assets/images/thumbImages/'.$filename;
+
+        // File Upload
+
+        $image_content = file_get_contents($PrimaryImageUrl);
+        file_put_contents($destUrl, $image_content);
+        file_put_contents($thumbUrl, $image_content);
+        $this->resizeImage($thumbUrl, 0, 150, true);
+
+        //get image size
+        $image = imagecreatefromstring($image_content);
+        $width = imagesx($image);
+        $height = imagesy($image);
+
+        $AuctionUpdateData = array(
+            "PrimaryImage" => $filename,
+            "pmW" => $width,
+            "pmH" => $height
+        );
+
+        $this->db->where('ID', $getID);
+        $this->db->update('tblDeals', $AuctionUpdateData);
+
+        // Add 10 Scrapped Photos 
+
+        for ($i = 1; $i <= 3; $i++) {
+            $sliderImageUrl = $this->input->post('scrappedImage'.$i);
+            if ($sliderImageUrl == '' || $sliderImageUrl == $PrimaryImageUrl)
+                continue;
+
+            $fileFilter = explode('.', $sliderImageUrl);
+            $fileExt = $fileFilter[count($fileFilter) - 1];
+    
+            $date = new DateTime();
+            $filename = $date->getTimestamp();
+    
+            $filename = 'Truck' . $getID . $i . "_" . $filename . '.'. $fileExt;
+    
+            $destUrl = 'assets/images/sliderImages/' . $filename;
+    
+            // File Upload
+    
+            $image_content = file_get_contents($sliderImageUrl);
+            file_put_contents($destUrl, $image_content);
+    
+            //get image size
+            $image = imagecreatefromstring($image_content);
+            $width = imagesx($image);
+            $height = imagesy($image);
+    
+            $pictureData = array(
+                'TruckID' => $getID,
+                'Filename' =>  $filename,
+                'Kind' => 'picture',
+                'Width' => $width,
+                'Height' => $height
+            );
+            $this->db->insert('tblresource', $pictureData);
+        }
+
+        //Log 
+
+        $data = array(
+            'UserID' => $this->session->userdata('ID'),
+            'Action' => 'Add Truck',
+            'Objective' => $getID,
+            'Result' => 'Success'
+        );
+        $this->Log_model->addLog($data);
+
+        echo json_encode(array('success' => true, 'picture' => array('ID' => $getID, 'url' => base_url($destUrl), 'pmW' => $width, 'pmH' => $height)));
+    }
 }
