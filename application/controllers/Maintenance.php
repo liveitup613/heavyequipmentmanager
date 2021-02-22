@@ -526,8 +526,11 @@ class Maintenance extends CI_Controller
 
         // Add 10 Scrapped Photos 
 
-        for ($i = 1; $i <= 3; $i++) {
+        for ($i = 1; $i <= 15; $i++) {
             $sliderImageUrl = $this->input->post('scrappedImage'.$i);
+            if ($sliderImageUrl == NULL)
+                break;
+
             if ($sliderImageUrl == '' || $sliderImageUrl == $PrimaryImageUrl)
                 continue;
 
