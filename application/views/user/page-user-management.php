@@ -171,7 +171,7 @@
                     </div>
                 </div>
                 <?php if ($PERMISSION == "admin") { ?>
-                    <!-- <div class="row clearfix">
+                    <div class="row clearfix">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="body text-right">
@@ -181,7 +181,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 <?php } ?>
 
                 <div class="modal fade" id="AddNewUser" tabindex="-1" role="dialog" aria-labelledby="AddNewUserTitle" aria-hidden="true">

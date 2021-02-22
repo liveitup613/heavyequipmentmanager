@@ -629,7 +629,7 @@ header('Expires: 0');
                     </div>
                 </div>
                 <div class="modal-footer">                    
-                    <a href="#" id="fb_share" class="fa fa-facebook share-btn"></a>
+                    <!-- <a href="#" id="fb_share" class="fa fa-facebook share-btn"></a> -->
                     <a href="#" id="wa_share" class="fa fa-whatsapp share-btn"></a>
                     <a href="#" id="google_share" class="fa fa-google share-btn"></a>
                 </div>
