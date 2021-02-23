@@ -258,7 +258,7 @@ textarea.item-info-content{
 
 #pdfModal .modal-photo-cell {
     width: 320px;
-    height: 250px;
+    height: 224px;
     position: relative;
     overflow: hidden;
     background-size: 100% 100%;
@@ -1325,27 +1325,26 @@ button:disabled{
   }
 
   .first-pdf-page-gallery-container{
-      display: flex;     
-      width: 700px;
-      /* height: 630px; */
-      margin: 10px auto;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+        display: flex;
+        width: 800px;
+        height: 608px;
+        /* padding: 10px; */
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
   }
   .rest-pdf-page-gallery-container{
         display: flex;
-        width: 700px;
-        /* height: 930px; */
-        margin: 10px auto;
+        width: 800px;
+        /* height: 930px; */        
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
   }
   .galleryCell{
-      width:320px;
-      height: 250px;
-      margin-top: 50px;
+      width:400px;
+      height: 304px;   
+      padding: 40px;   
   }
 
   input#allCheck{

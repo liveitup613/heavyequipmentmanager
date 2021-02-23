@@ -771,7 +771,194 @@ function renderModalTB() {
                     $('#printPdfBtn').prop('disabled', true);
                     $('#printPdfImages').prop('disabled', true);
 
-                } else {
+                }
+                else if (result.length == 1) {
+                    var full = result[0];
+                    $.ajax(
+                        {
+                            url: base_url + 'Deals/getGalleryImageData',
+                            type: 'POST',
+                            data: {
+                                TruckID: full['ID']
+                            },
+                            success: function (re) {
+                                var response = JSON.parse(re);
+                                var images = response.pictures;
+
+                                var images_for_first_page = [];
+                                var images_for_rest_page = [];
+                                if (images.length <= 4) {
+                                    images_for_first_page = images;
+                                } else {
+                                    images_for_first_page = images.slice(0, 4);
+                                    images_for_rest_page = images.slice(4, images.length);
+                                }
+
+                                var tempPage = (images.length + 2) / 6;
+                                if (Math.abs(tempPage - Math.floor(tempPage)) > 0) {
+                                    totalPdfPage = Math.floor(tempPage) + 1;
+                                } else {
+                                    totalPdfPage = Math.floor(tempPage);
+                                }
+
+                                $('#printPdfBtn').prop('disabled', false);
+                                $('#printPdfImages').prop('disabled', false);
+                                
+                                var contentItem = '';
+                                for (var i = 0; i < totalPdfPage; i++) {
+
+                                    contentItem += '<div class="pdfPage" id="pdfPage' + i + '">';
+                                    contentItem += '<div class="pdfPage-header">';
+                                    contentItem += '<div class="pdf-header-logo">';
+                                    contentItem += '<img src="' + base_url + 'assets/images/icon/pdf_logo.png"/>';
+                                    contentItem += '</div>';
+                                    contentItem += '<div class="pdf-header-desc-box"><div class="header-arrow"></div><div class="desc"><p class="heading">OFERTAS DE COMPRA</p><p><strong>VENDEDOR:</strong> ' + userName + '</p><p><strong>Tel:</strong> ' + getStyledPhoneNumber(userPhone) + '</p><p><strong>Mail:</strong> ' + userEmail + '</p></div></div>';
+                                    contentItem += '<div class="cross-bar"><img src="' + base_url + 'assets/images/icon/header-cross.png' + '"></div>'
+                                    contentItem += '</div>';
+                                    contentItem += '<div class="pdfPage-content">';
+
+                                    if (i == 0) {   // first page
+
+                                        contentItem += '<div class="pageCell">';
+                                        contentItem += '<div class="pageCell-arrow"></div>';
+
+                                        // image section cell
+
+                                        var $imgUrl = base_url + "assets/images/primaryImages/" + full.PrimaryImage;
+                                        var height = 224;
+                                        var width = parseInt(full.pmW * height / full.pmH);
+
+                                        contentItem += '<div id="share-image" class="imageCell">' +
+                                            '<div class="modal-photo-cell" style="background-image: url(\'' + $imgUrl + '\')">' +
+                                            '<img  src="' + $imgUrl + '" style="width: ' + width + 'px; height: ' + height + 'px; position:absolute; top:0; left: 50%; margin-left:' + (-1 * width / 2) + 'px;" >' +
+                                            '</div>' +
+                                            '</div>';
+
+                                        // detail cell2 
+
+                                        contentItem += '<div class="contentCell">';
+
+                                        var title = getTitleFromDatabase(full);                                
+                                        var city = full.City.trim();
+                                        var state = full.State.trim();
+                                        var country = full.Country.trim();
+                                        var location = '';
+
+                                        if (city != '')
+                                            location = city + ', ';
+                                        if (state != '')
+                                            location += state + ', ';
+                                        location += country;
+
+                                        contentItem += "<h3 class='pdf-title'>" + title + "</h3>";
+                                        contentItem += '<p class="pdf-location">' + location + '</p>';
+
+                                        contentItem += '<div class="pdf-info-box">';
+
+                                        if (full.DealType == 'Auction') {
+
+                                            contentItem += '<div class="auction-info-box">';
+                                            contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
+                                            contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
+                                            contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
+                                            contentItem += '</div>';
+
+                                            if (Number(full.Price) != 0) {
+                                                var price_unit = 'USD';
+                                                var price = '$' + numberWithCommas(full.Total);
+                                                
+                                                contentItem += '<div class="pdf-price-box">';
+                                                contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
+                                                contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
+                                                contentItem += '</div>';
+                                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                            }
+
+                                        } else if (full.DealType == 'For Sale') {
+                                        
+                                            var price_unit = 'USD';
+                                            var price = '$' + numberWithCommas(full.Total);
+                                            
+                                            contentItem += '<div class="pdf-price-box">';
+                                            contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
+                                            contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Venta</div>';
+                                            contentItem += '</div>';
+                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                            
+                                            
+                                        }
+
+                                        contentItem += '</div>';
+                                        contentItem += '<div class="pdf-description-box">';
+                                        contentItem += '<div class="pdf-description-arrow"></div>';
+                                        contentItem += '<div class="pdf-label5">Detalles</div>'
+                                        contentItem += '<div class="pdf-description-content-box">';
+                                        ///////////// special fields //////////////////////////////////////////////
+                                        contentItem += get_detail_data_for_pdf(full);
+
+                                        contentItem += '</div>';
+                                        contentItem += '</div>';
+                                        contentItem += '</div>';
+                                        contentItem += '</div>';
+
+                                        // add first page gallery
+                                        contentItem += '<div class="first-pdf-page-gallery-container">';
+                                        for (var m = 0; m < images_for_first_page.length; m++) {
+
+                                            var imageItem = images_for_first_page[m];
+
+                                            $imgUrl = imageItem.url;
+                                            height = 224;
+                                            width = parseInt(imageItem.Width * height / imageItem.Height);
+
+                                            contentItem += '<div id="share-image" class="galleryCell">' +
+                                                '<div class="modal-photo-cell" style="background-image: url(\'' + $imgUrl + '\')">' +
+                                                '<img  src="' + $imgUrl + '" style="width: ' + width + 'px; height: ' + height + 'px; position:absolute; top:0; left: 50%; margin-left:' + (-1 * width / 2) + 'px;" >' +                                                
+                                                '</div>' +
+                                                '</div>';
+                                        }
+                                        contentItem += '</div>';
+
+                                    }
+                                    else {   // rest pages
+                                        // add first page gallery
+                                        contentItem += '<div class="rest-pdf-page-gallery-container">';
+                                        for (var m = 0; m < images_for_rest_page.length; m++) {
+
+                                            var imageItem = images_for_rest_page[m];
+
+                                            $imgUrl = imageItem.url;
+                                            height = 224;
+                                            width = parseInt(imageItem.Width * height / imageItem.Height);
+
+                                            contentItem += '<div id="share-image" class="galleryCell">' +
+                                                '<div class="modal-photo-cell" style="background-image: url(\'' + $imgUrl + '\')">' +
+                                                '<img  src="' + $imgUrl + '" style="width: ' + width + 'px; height: ' + height + 'px; position:absolute; top:0; left: 50%; margin-left:' + (-1 * width / 2) + 'px;" >' +                                                
+                                                '</div>' +
+                                                '</div>';
+                                        }
+                                        contentItem += '</div>';
+
+                                    }
+                                    contentItem += '</div>';
+                                    contentItem += '<div class="pdfPage-footer">';
+                                    contentItem += '<div class="left-desc"><p><strong>MexMachinery |</strong> Ave. Álvaro Obregón 24 y 25 #2404 col. Residencias C.P. 83448 San Luis Río Colorado, Sonora | (+52)653 174 0790,   (+52)653 123 5571| info.mexmachinery@gmail.com</p><p><strong>https://www.facebook.com/MEX-Machinery</strong></p></div><div class="right-desc"><p><strong>Somos una Empresa dedicada a la compra y venta de Maquinaria, proporcionando el mejor servicio a nuestros clientes para la Construcción de Mexico y Latinoamérica<br>Bienvenido a MexMachinery<br>La Maquinaria para Mexico y Latinoamérica!!</strong></p></div>';
+                                    contentItem += '</div>';
+                                    contentItem += '</div>';
+
+                                }
+
+                                $('.table-pdf').html(contentItem);
+                                hiddenSpinner();
+
+                            }
+                        });
+
+
+                }
+                else {
                     var tempPage = result.length / 3;
                     if (Math.abs(tempPage - Math.floor(tempPage)) > 0) {
                         totalPdfPage = Math.floor(tempPage) + 1;
