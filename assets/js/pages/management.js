@@ -944,7 +944,7 @@ function renderModalTB() {
                                     }
                                     contentItem += '</div>';
                                     contentItem += '<div class="pdfPage-footer">';
-                                    contentItem += '<div class="left-desc"><p><strong>MexMachinery |</strong> Ave. Álvaro Obregón 24 y 25 #2404 col. Residencias C.P. 83448 San Luis Río Colorado, Sonora | (+52)653 174 0790,   (+52)653 123 5571| info.mexmachinery@gmail.com</p><p><strong>https://www.facebook.com/MEX-Machinery</strong></p></div><div class="right-desc"><p><strong>Somos una Empresa dedicada a la compra y venta de Maquinaria, proporcionando el mejor servicio a nuestros clientes para la Construcción de Mexico y Latinoamérica<br>Bienvenido a MexMachinery<br>La Maquinaria para Mexico y Latinoamérica!!</strong></p></div>';
+                                    contentItem += '<div class="left-desc"><p><strong>Machinery Hawkers |</strong> Blvd. Abelardo R. Rodriguez 2292 col. alamitos C.P.21210, Mexicali B.C. | (+52) 686 172 1838 | ventas@machineryhawkers.com</p><p><strong>https://www.facebook.com/machinery.hawkers</strong></p></div><div class="right-desc"><p><strong>Machiney Hawkers, dedicados a la comercialización de Maquinaria Pesada, construcción y agrícola, nuestro objetivo principal es ubicar la maquinaria que mas de adapte a sus necesidades en todo USA, Canadá y México</strong></p></div>';
                                     contentItem += '</div>';
                                     contentItem += '</div>';
 
