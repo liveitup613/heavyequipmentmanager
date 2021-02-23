@@ -738,13 +738,13 @@ function renderModalTB() {
             }
 
             var userData = result.user;
-            userName = userData.USERNAME;
+            userName = userData.NAME + ' ' + userData.LASTNAME;
             userEmail = userData.EMAIL;
             userPhone = userData.PHONE;
         }
     });
 
-    if (userName == '' && userPhone == '' && userEmail == '') {
+    if (userName == ' ' && userPhone == '' && userEmail == '') {
         toastr.error("Get User Data Error", 'HEM');
         $('#pdfModal').modal('hide');
         hiddenSpinner;
@@ -1796,6 +1796,30 @@ function renderPublishModal(DealID) {
 
             $('.table-publish').html('');
 
+            var userName = '';
+            var userEmail = '';
+            var userPhone = '';
+            $.ajax({
+                url: base_url + 'User/GetUserInfo',
+                type: 'get',
+                data: {
+                    ID: $('#userIDInput').val()
+                },
+                async: false,
+                timeout: 3000,
+                success: function(res) {
+                    var result = JSON.parse(res);
+                    if (result.success == false) {
+                        return;
+                    }
+
+                    var userData = result.user;
+                    userName = userData.NAME + ' ' + userData.LASTNAME;
+                    userEmail = userData.EMAIL;
+                    userPhone = userData.PHONE;
+                }
+            });
+
             $.ajax({
                 url: base_url + 'Deals/getTruckDataForPdf',
                 type: 'POST',
@@ -1826,7 +1850,7 @@ function renderPublishModal(DealID) {
                                     contentItem += '<div class="pdf-header-logo">';
                                     contentItem += '<img src="' + base_url + 'assets/images/icon/pdf_logo.png"/>';
                                     contentItem += '</div>';
-                                    contentItem += '<div class="pdf-header-desc-box"><div class="header-arrow"></div><div class="desc"><p class="heading">OFERTAS DE COMPRA</p><p><strong>VENDEDOR:</strong> Raúl Pacheco</p><p><strong>Tel:</strong> (+52) 81 1170 0354</p><p><strong>Mail:</strong> rpacheco@machineryhaunters.com</p></div></div>';
+                                    contentItem += '<div class="pdf-header-desc-box"><div class="header-arrow"></div><div class="desc"><p class="heading">OFERTAS DE COMPRA</p><p><strong>VENDEDOR:</strong> ' + userName + '</p><p><strong>Tel:</strong> ' + getStyledPhoneNumber(userPhone) + '</p><p><strong>Mail:</strong> ' + userEmail + '</p></div></div>';
                                     contentItem += '<div class="cross-bar"><img src="' + base_url + 'assets/images/icon/header-cross.png' + '"></div>'
                                     contentItem += '</div>';
                                     contentItem += '<div class="pdfPage-content">';
