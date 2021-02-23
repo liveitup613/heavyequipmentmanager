@@ -848,7 +848,7 @@ function renderModalTB() {
 
                                 if (Number(full.Price) != 0) {
                                     var price_unit = 'USD';
-                                    var price = '$' + numberWithCommas(full.Price);
+                                    var price = '$' + numberWithCommas(full.Total);
                                     
                                     contentItem += '<div class="pdf-price-box">';
                                     contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
@@ -861,7 +861,7 @@ function renderModalTB() {
                             } else if (full.DealType == 'For Sale') {
                             
                                 var price_unit = 'USD';
-                                var price = '$' + numberWithCommas(full.Price);
+                                var price = '$' + numberWithCommas(full.Total);
                                 
                                 contentItem += '<div class="pdf-price-box">';
                                 contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
@@ -1891,7 +1891,7 @@ function renderPublishModal(DealID) {
 
                                         if (Number(full.Price) != 0) {
                                             var price_unit = 'USD';
-                                            var price = '$' + numberWithCommas(full.Price);
+                                            var price = '$' + numberWithCommas(full.Total);
                                             
                                             contentItem += '<div class="pdf-price-box">';
                                             contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
@@ -1904,7 +1904,7 @@ function renderPublishModal(DealID) {
                                     } else if (full.DealType == 'For Sale') {
                                     
                                         var price_unit = 'USD';
-                                        var price = '$' + numberWithCommas(full.Price);
+                                        var price = '$' + numberWithCommas(full.Total);
                                         
                                         contentItem += '<div class="pdf-price-box">';
                                         contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
