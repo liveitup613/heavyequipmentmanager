@@ -747,7 +747,7 @@ function renderModalTB() {
     if (userName == ' ' && userPhone == '' && userEmail == '') {
         toastr.error("Get User Data Error", 'HEM');
         $('#pdfModal').modal('hide');
-        hiddenSpinner;
+        hiddenSpinner();
         return;
     }
 
