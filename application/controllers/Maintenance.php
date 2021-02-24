@@ -390,7 +390,7 @@ class Maintenance extends CI_Controller
 
         if ($EqYear != NULL) {
             $this->db->select('Customs');
-            $this->db->where('EqCategory', $EqCategory);
+            $this->db->where('EqCategory', $eqCategory);
             $this->db->where_in('EqYear', array($EqYear - 1, $EqYear, $EqYear + 1));
             $this->db->order_by('DateAdded', 'desc');
             $this->db->limit(5);
@@ -403,7 +403,7 @@ class Maintenance extends CI_Controller
             $truckData['Customs'] = 0;
         
         $this->db->select('Shipping');
-        $this->db->where('EqCategory', $EqCategory);
+        $this->db->where('EqCategory', $eqCategory);
         if ($Country != NULL)
             $this->db->where('Country', $Country);
         if ($State != NULL)  
