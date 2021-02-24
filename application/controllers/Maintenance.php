@@ -267,14 +267,9 @@ class Maintenance extends CI_Controller
         $StartDate = $this->input->post('StartDate');
         $EndDate = $this->input->post('EndDate');
         $Auctioneer = $this->input->post('Auctioneer');
-        $Link = $this->input->post('Link');
-        $BuyPremium = $this->input->post('BuyPremium');
-        $Price = $this->input->post('Price');
-        $Shipping = $this->input->post('Shipping');
-        $Customs = $this->input->post('Customs');
-        $Commission = $this->input->post('Commission');
-        $PrimaryImage = "";
-        $Total = $this->input->post('Total');
+        $Link = $this->input->post('Link');        
+        $Price = $this->input->post('Price');   
+        $PrimaryImage = "";        
         $UserID = 3;
         $DateAdded = date('Y-m-d H:i:s');
         $Contact = $this->input->post('Contact');
@@ -385,27 +380,45 @@ class Maintenance extends CI_Controller
                 $truckData['SourceID'] = $invId;
             }
         }
-        if ($BuyPremium != NULL) {
-            $truckData['BuyPremium'] = $BuyPremium;
-        }
+
+        
         if ($Price != NULL) {
             $truckData['Price'] = $Price;
+        }    
+        else
+            $truckData['Price'] = 0;
+
+        if ($EqYear != NULL) {
+            $this->db->select('Customs');
+            $this->db->where('EqCategory', $EqCategory);
+            $this->db->where_in('EqYear', array($EqYear - 1, $EqYear, $EqYear + 1));
+            $this->db->order_by('DateAdded', 'desc');
+            $this->db->limit(5);
+            $this->db->from('tblDeals');
+            $result = $this->db->get()->result_array();
+
+            $truckData['Customs'] = $this->getAverageValue($result, 'Customs');
         }
-        if ($Margin != NULL) {
-            $truckData['Margin'] = $Margin;
-        }
-        if ($Shipping != NULL) {
-            $truckData['Shipping'] = $Shipping;
-        }
-        if ($Customs != NULL) {
-            $truckData['Customs'] = $Customs;
-        }
-        if ($Commission != NULL) {
-            $truckData['Commission'] = $Commission;
-        }
-        if ($Total != NULL) {
-            $truckData['Total'] = $Total;
-        }
+        else
+            $truckData['Customs'] = 0;
+        
+        $this->db->select('Shipping');
+        $this->db->where('EqCategory', $EqCategory);
+        if ($Country != NULL)
+            $this->db->where('Country', $Country);
+        if ($State != NULL)  
+            $this->db->where('State', $State);
+        $this->db->where_in('DealType', array('Auction', 'For Sale'));
+        $this->db->limit(5);
+        $this->db->order_by('DateAdded', 'desc');
+        $this->db->from('tblDeals');
+        $result = $this->db->get()->result_array();
+
+        $ReturnArray['Shipping'] = $this->getAverageValue($result, 'Shipping');
+
+        $truckData['Commission'] = 2500;
+        $truckData['Total'] = intval($truckData['Price']) + $truckData['Customs'] + $truckData['Shipping'] + 2500;
+        
         if ($mkTitle != NULL) {
             $truckData['mkTitle'] = $mkTitle;
         }

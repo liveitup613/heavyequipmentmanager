@@ -533,7 +533,7 @@ function Calculate() {
 
          total = (valBuyPremium * valPrice) / 100 + valPrice + valShipping + valCustoms + valComm;
 
-    } else if (dealtype == 'Supplier') {
+    } else if (dealtype == 'For Sale') {
 
         var valPrice = Number($('#Price').val());
         var valShipping = Number($('#Shipping').val());
