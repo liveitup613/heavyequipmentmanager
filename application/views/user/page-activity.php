@@ -13,7 +13,7 @@ header('Expires: 0');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="description" content="Machinary Hunters Platform">
+    <meta name="description" content="Heavy Equipment Manager">
     <meta name="keywords"
         content="admin template, Oculux admin template, dashboard template, flat admin template, responsive admin template, web app, Light Dark version">
     <meta name="author" content="GetBootstrap, design by: puffintheme.com">
