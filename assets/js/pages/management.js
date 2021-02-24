@@ -330,6 +330,9 @@ var columnData = [
         "title": getLocalizationWord("Truck Info"),
         sortable: false,
         render: function (data, type, full, meta) {
+            if (has_truck_special_field(full.Category) == false)
+                return '';
+                
             var truckYear = '';
             if (parseInt(full.TruckYear)) {
                 truckYear = full.TruckYear + '<br>';
