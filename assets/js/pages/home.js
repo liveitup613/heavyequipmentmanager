@@ -95,10 +95,10 @@ function getTodayAddedDealStatus() {
         success: function (res) {
             var data = JSON.parse(res);
 
-            var total = data.Auction + data.For Sale + data.Consignment + data.Inventory;
+            var total = data.Auction + data.ForSale + data.Consignment + data.Inventory;
 
             $('#AddedAuctionCount').html(data.Auction);
-            $('#AddedFor SaleCount').html(data.For Sale);
+            $('#AddedFor SaleCount').html(data.ForSale);
             $('#AddedConsignmentCount').html(data.Consignment);
             $('#AddedInventoryCount').html(data.Inventory);
 
