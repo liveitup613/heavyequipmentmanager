@@ -1041,7 +1041,7 @@ function renderModalTB() {
                                     contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                     contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                     contentItem += '</div>';
-                                    if (full.Auctioneer != 'Ohter') {
+                                    if (full.Auctioneer != 'Other') {
                                         contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
                                         contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
                                     }
@@ -2087,7 +2087,7 @@ function renderPublishModal(DealID) {
                                             contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                             contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                             contentItem += '</div>';
-                                            if (full.Auctioneer != 'Ohter') {
+                                            if (full.Auctioneer != 'Other') {
                                                 contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
                                                 contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';  
                                             }
