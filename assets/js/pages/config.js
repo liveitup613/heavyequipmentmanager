@@ -1891,6 +1891,47 @@ function get_add_price_element(dealtype) {
                         '</div>' +
                         '</div>';
                 }
+                if (item == 'Shipping') {
+                    result += '<div class="col-lg-4 col-md-12">' +
+                        '<div class="form-group">' +
+                        '<label>' + getLocalizationWord('Shipping') + '</label>' +
+                        '<input type="number" class="form-control" id="Shipping" name="Shipping" onchange="Calculate();" value="0" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" required>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                if (item == 'Customs') {
+                    result += '<div class="col-lg-4 col-md-12">' +
+                        '<div class="form-group">' +
+                        '<label>' + getLocalizationWord('Customs') + '</label>' +
+                        '<input type="number" class="form-control" id="Customs" name="Customs" onchange="Calculate();" value="0" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" required>' +
+                        '</div>' +
+                        '</div>';
+                }
+                if (item == 'Commission') {
+                    result += '<div class="col-lg-4 col-md-12">' +
+                        '<div class="form-group">' +
+                        '<label>' + getLocalizationWord('Commission') + '</label>' +
+                        '<input type="number" class="form-control" id="Commission" name="Commission" onchange="Calculate();" value="2500" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" required>' +
+                        '</div>' +
+                        '</div>';
+                }
+                if (item == 'BuyPremium') {
+                    result += '<div class="col-lg-4 col-md-12">' +
+                        '<div class="form-group">' +
+                        '<label>' + getLocalizationWord("Buyer's Premium") + ' </label>' +
+                        '<input class="form-control" id="BuyPremium" name="BuyPremium" onchange="Calculate();" value="0" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" required>' +
+                        '</div>' +
+                        '</div>';
+                }
+                if (item == 'Margin') {
+                    result += '<div class="col-lg-4 col-md-12">' +
+                        '<div class="form-group">' +
+                        '<label>' + getLocalizationWord('Margin') + '</label>' +
+                        '<input class="form-control" id="Margin" name="Margin" value="0">' +
+                        '</div>' +
+                        '</div>';
+                }
             }
             
             return result;

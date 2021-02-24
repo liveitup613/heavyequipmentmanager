@@ -160,7 +160,7 @@ class Deals extends CI_Controller
 
         if (isset($_FILES["userImage"]["name"])) {
             $config['upload_path'] = 'assets/images/primaryImages/temp/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['allowed_types'] = '*';
             $config['overwrite'] = true;
             $config['file_name'] = $filename;
             $this->load->library('upload', $config);
@@ -1402,7 +1402,7 @@ class Deals extends CI_Controller
             $filename = 'deals' . $date->getTimestamp();
 
             $config['upload_path'] = 'assets/images/primaryImages/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['allowed_types'] = '*';
             $config['overwrite'] = true;
             $config['file_name'] = $filename;
 
@@ -2013,7 +2013,7 @@ class Deals extends CI_Controller
                     $date = new DateTime();
                     $filename = $date->getTimestamp();
                     $config['upload_path'] = 'assets/images/sliderImages/';
-                    $config['allowed_types'] = 'jpg|jpeg|png|gif';
+                    $config['allowed_types'] = '*';
                     $config['overwrite'] = true;
                     $config['file_name'] = 'Truck' . $TruckID . $i . "_" . $filename;
                     $this->load->library('upload', $config);
@@ -2263,7 +2263,7 @@ class Deals extends CI_Controller
 
         if (!empty($_FILES["primary_picture"]["name"])) {
             $config['upload_path'] = 'assets/images/primaryImages/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['allowed_types'] = '*';
             $config['overwrite'] = true;
             $config['file_name'] = $filename;
 
