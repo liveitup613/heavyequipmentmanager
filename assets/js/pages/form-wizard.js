@@ -80,7 +80,7 @@ $(function () {
         }
     });
 
-    var defaultTotal = 2500;
+    var defaultTotal = 0;
 
     $('#Total').val(defaultTotal);
     $('#NumTotal').html(numberWithCommas(defaultTotal));
@@ -526,20 +526,13 @@ function Calculate() {
     if (dealtype == 'Auction') {
 
         var valPrice = Number($('#Price').val());
-        var valShipping = Number($('#Shipping').val());
-        var valCustoms = Number($('#Customs').val());
-        var valComm = Number($('#Commission').val());
-        var valBuyPremium = Number($('#BuyPremium').val());
 
-         total = (valBuyPremium * valPrice) / 100 + valPrice + valShipping + valCustoms + valComm;
+         total = valPrice;
 
     } else if (dealtype == 'For Sale') {
 
         var valPrice = Number($('#Price').val());
-        var valShipping = Number($('#Shipping').val());
-        var valCustoms = Number($('#Customs').val());
-        var valComm = Number($('#Commission').val());
-        total = valPrice + valShipping + valCustoms + valComm;
+        total = valPrice;
 
     } else if (dealtype == 'Consignment') {
         var valPrice = Number($('#Price').val());      

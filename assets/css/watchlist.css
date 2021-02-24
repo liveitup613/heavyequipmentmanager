@@ -1132,3 +1132,17 @@ input.checkbox-tick{
         width: 1550px!important;
     }
 }
+
+.top-navbar .navbar-btn .logo {
+    width: 117px;
+}
+
+#left-sidebar .navbar-brand .logo {
+    width: 117px;
+}
+
+#left-sidebar .navbar-brand {
+    display: block;    
+    padding: 0px 0 8px 0;
+    margin: 8px 15px 8px 10px;
+}
