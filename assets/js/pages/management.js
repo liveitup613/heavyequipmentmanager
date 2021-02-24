@@ -859,7 +859,7 @@ function renderModalTB() {
 
                                             contentItem += '<div class="auction-info-box">';
                                             contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
-                                            contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
+                                            contentItem += '<div class="auction-date">' + getDatefromDateTime(full.EndDate) + '</div>';
                                             contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
                                             contentItem += '</div>';
 
@@ -1031,7 +1031,7 @@ function renderModalTB() {
 
                                 contentItem += '<div class="auction-info-box">';
                                 contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
-                                contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
+                                contentItem += '<div class="auction-date">' + getDatefromDateTime(full.EndDate) + '</div>';
                                 contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
                                 contentItem += '</div>';
 
@@ -2077,7 +2077,7 @@ function renderPublishModal(DealID) {
 
                                         contentItem += '<div class="auction-info-box">';
                                         contentItem += '<div class="auction-arrow"></div><div class="auction-name"><img src="' + base_url + 'assets/images/icon/auction_icon.png">Subasta</div>';
-                                        contentItem += '<div class="auction-date">' + full.EndDate + '</div>';
+                                        contentItem += '<div class="auction-date">' + getDatefromDateTime(full.EndDate) + '</div>';
                                         contentItem += '<span class="auctioneer-title">Subastadora:</span><span class="auctioneer-value">' + full.Auctioneer + '</span>';
                                         contentItem += '</div>';
 
