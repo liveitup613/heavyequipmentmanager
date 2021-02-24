@@ -414,7 +414,7 @@ class Maintenance extends CI_Controller
         $this->db->from('tblDeals');
         $result = $this->db->get()->result_array();
 
-        $ReturnArray['Shipping'] = $this->getAverageValue($result, 'Shipping');
+        $truckData['Shipping'] = $this->getAverageValue($result, 'Shipping');
 
         $truckData['Commission'] = 2500;
         $truckData['Total'] = intval($truckData['Price']) + $truckData['Customs'] + $truckData['Shipping'] + 2500;
@@ -593,5 +593,22 @@ class Maintenance extends CI_Controller
         $this->image_lib->clear();
         $this->image_lib->initialize($config);
         $this->image_lib->resize();
+    }
+
+    public function getAverageValue($result, $Column) {
+        if ($result != null) {
+            $Total_Price = 0;
+            $Average = 0;
+            $Cnt = 0;
+
+            foreach ($result as $row) {
+                $Total_Price += $row[$Column];
+                $Cnt++;
+            }
+            
+            $Average = $Total_Price / $Cnt;            
+            return $Average;            
+        }
+        return 0;
     }
 }
