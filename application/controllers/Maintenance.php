@@ -577,7 +577,7 @@ class Maintenance extends CI_Controller
             $this->db->insert('tblresource', $pictureData);
         }
 
-        echo json_encode(array('success' => true, 'picture' => array('ID' => $getID, 'url' => base_url($destUrl), 'pmW' => $width, 'pmH' => $height)));
+        echo json_encode(array('success' => true, 'data' => array('ID' => $getID, 'url' => base_url($destUrl), 'pmW' => $width, 'pmH' => $height)));
     }
 
     public function resizeImage($source, $width, $height, $maintain_ratio = FALSE) {
