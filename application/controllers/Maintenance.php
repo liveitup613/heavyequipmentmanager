@@ -611,4 +611,20 @@ class Maintenance extends CI_Controller
         }
         return 0;
     }
+
+    public function removeDeal() {
+        $ID = $this->input->post('ID');
+        $result = $this->deleteTruck($ID);
+
+        if ($result == false) {
+            echo json_encode(array(
+                'success' => false,                
+            ));
+            return;
+        }
+
+        echo json_encode(array(
+            'success' => true
+        ));
+    }
 }
