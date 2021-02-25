@@ -305,6 +305,7 @@ class Maintenance extends CI_Controller
         $truckData['DealType'] = $dealType;
         $truckData['EqCategory'] = $eqCategory;
         $truckData['Note'] = $Note;
+        $truckData['SourcingAppID'] = $this->input->post('WebsiteID');
 
         if ($EqYear != NULL) {
             $truckData['EqYear'] = $EqYear;

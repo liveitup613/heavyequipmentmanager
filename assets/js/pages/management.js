@@ -192,11 +192,16 @@ var columnData = [
                 endDate = full.EndDate + '<br>';
             }
 
-            var auctioneer = '';
+            var auctioneer = '';            
             if (full.Auctioneer) {
-                auctioneer = full.Auctioneer;
+                auctioneer = full.Auctioneer + '<br>';
             }
-            return dealType + startDate + endDate + auctioneer;
+
+            var SourcingAppID = ''
+            if (full.SourcingAppID != '')
+                SourcingAppID = full.SourcingAppID;
+                
+            return dealType + startDate + endDate + auctioneer + SourcingAppID;
         }
     }, {
         "title": getLocalizationWord("Price Info"),
@@ -332,7 +337,7 @@ var columnData = [
         render: function (data, type, full, meta) {
             if (has_truck_special_field(full.Category) == false)
                 return '';
-                
+
             var truckYear = '';
             if (parseInt(full.TruckYear)) {
                 truckYear = full.TruckYear + '<br>';
