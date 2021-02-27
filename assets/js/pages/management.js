@@ -162,10 +162,12 @@ var columnData = [
             if (full.City) {
                 city = full.City + '<br>';
             }
-            var state = '';
-            if (full.State) {
-                state = full.State + '<br>';
-            }
+
+            state_info = get_location_item(full.Country, full.State);
+            var state = full.State;
+            if (state_info.name != '')
+                state = state_info.name;
+                
             var country = '';
             if (full.Country) {
                 country = full.Country + '<br>';
