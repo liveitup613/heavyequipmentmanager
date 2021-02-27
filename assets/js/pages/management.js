@@ -168,7 +168,7 @@ var columnData = [
             if (state_info.name != '')
                 state = state_info.name;
             state = state + '<br>';
-            
+
             var country = '';
             if (full.Country) {
                 country = full.Country + '<br>';
@@ -192,7 +192,7 @@ var columnData = [
             }
             var endDate = '';
             if (full.EndDate) {
-                endDate = full.EndDate + '<br>';
+                endDate = getDatefromDateTime(full.EndDate) + '<br>';
             }
 
             var auctioneer = '';            
