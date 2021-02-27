@@ -167,7 +167,8 @@ var columnData = [
             var state = full.State;
             if (state_info.name != '')
                 state = state_info.name;
-                
+            state = state + '<br>';
+            
             var country = '';
             if (full.Country) {
                 country = full.Country + '<br>';
