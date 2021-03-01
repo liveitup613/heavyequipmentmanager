@@ -667,7 +667,12 @@ function renderTB() {
                 $td[3].style.backgroundColor =  '#dc3545';
                 $td[3].style.color =  'white';
             }
-                
+
+            if (aData.Price == '0') {
+                $td = $('td', nRow);
+                $td[6].style.backgroundColor = '#fd7e14';
+                $td[6].style.color = 'white';
+            }                
         }
 
     });
