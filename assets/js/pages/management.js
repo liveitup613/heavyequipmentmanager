@@ -1693,7 +1693,7 @@ function onEditInfo(id) {
 
             } else if (result.DealType == 'For Sale') {
 
-                item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Price') + "Price:&nbsp; </span> <input class='item-edit-content' type='number' id='item-price' name='Price'  onkeyup='calculateTotalValue(\"" + result.DealType + "\")'  value='" + result.Price + "'></div>";
+                item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Price') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-price' name='Price'  onkeyup='calculateTotalValue(\"" + result.DealType + "\")'  value='" + result.Price + "'></div>";
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Shipping') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-shipping' name='Shipping' onkeyup='calculateTotalValue(\"" + result.DealType + "\")' value='" + result.Shipping + "'></div>";
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Customs') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-customs' name='Customs' onkeyup='calculateTotalValue(\"" + result.DealType + "\")' value='" + result.Customs + "'></div>";
                 item += "<div class='item-edit-item-box'><span class='item-edit-index'>" + getLocalizationWord('Commission') + ":&nbsp; </span> <input class='item-edit-content' type='number' id='item-commission' name='Commission' onkeyup='calculateTotalValue(\"" + result.DealType + "\")' value='" + result.Commission + "'></div>";
