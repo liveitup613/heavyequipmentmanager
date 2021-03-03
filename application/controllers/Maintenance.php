@@ -608,6 +608,7 @@ class Maintenance extends CI_Controller
             }
             
             $Average = $Total_Price / $Cnt;            
+            $Average = (intval($Average / 50) * 50);      
             return $Average;            
         }
         return 0;
