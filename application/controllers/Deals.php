@@ -1506,7 +1506,7 @@ class Deals extends CI_Controller
         if (!empty($truck)) {
 
             // delete from maquinaria JR
-            $this->deleteFromMachinary($ID);
+            // $this->deleteFromMachinary($ID);
             
             // delete primary image
             if (file_exists('assets/images/primaryImages/' . $truck['PrimaryImage'])) {

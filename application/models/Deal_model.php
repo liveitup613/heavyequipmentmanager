@@ -155,6 +155,7 @@ class Deal_model extends CI_Model
                 $this->db->or_like('viewActiveDeals.Length', $word);
                 $this->db->or_like('viewActiveDeals.Suspension', $word);
                 $this->db->or_like('viewActiveDeals.HorsePower', $word);
+                $this->db->or_like('viewActiveDeals.SourcingAppID', $word);
                 $this->db->or_like('viewActiveDeals.DealID', $word);
                 $this->db->or_like('viewActiveDeals.Type', $word);
                 $this->db->or_like('viewActiveDeals.Hours', $word);
