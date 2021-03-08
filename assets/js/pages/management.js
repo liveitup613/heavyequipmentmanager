@@ -338,7 +338,7 @@ var columnData = [
         "title": getLocalizationWord("Truck Info"),
         sortable: false,
         render: function (data, type, full, meta) {
-            if (has_truck_special_field(full.Category) == false)
+            if (has_truck_special_field(full.EqCategory) == false)
                 return '';
 
             var truckYear = '';
