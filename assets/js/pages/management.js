@@ -22,6 +22,7 @@ var Glo_DealID = 0;
 var FirstLoad = 0;
 var IsSamePost = 0;
 var ShareSubject = '';
+var bIncludeService = 'yes';
 
 // column data
 var columnData = [
@@ -491,8 +492,7 @@ $(function () {
     });
 
     $('#pdfbtn').click(function () {
-        $('#pdfModal').modal('show');
-        renderModalTB();
+        $('#includeServiceModal').modal('show');       
     });
 
 
@@ -731,6 +731,13 @@ function renderPostingStatsTB() {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
+function includeService(value) { 
+    bIncludeService = value;
+    $('#includeServiceModal').modal('hide');
+    $('#pdfModal').modal('show');
+    renderModalTB();
+}
+
 function renderModalTB() {
     showSpinner();
 
@@ -882,12 +889,14 @@ function renderModalTB() {
                                             if (Number(full.Price) != 0) {
                                                 var price_unit = 'USD';
                                                 var price = '$' + numberWithCommas(full.Total);
+                                                if (bIncludeService == 'no')
+                                                    price = '$' + numberWithCommas(full.Price);
                                                 
                                                 contentItem += '<div class="pdf-price-box">';
                                                 contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                                 contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                                 contentItem += '</div>';
-                                                if (full.Auctioneer != 'Other') {
+                                                if (full.Auctioneer != 'Other' && bIncludeService == 'yes') {
                                                     contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios con una puja máxima en ' + numberWithCommas(full.Price) + ' USD</span><br>';
                                                     contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
                                                 }
@@ -897,13 +906,17 @@ function renderModalTB() {
                                         
                                             var price_unit = 'USD';
                                             var price = '$' + numberWithCommas(full.Total);
+                                            if (bIncludeService == 'no')
+                                                    price = '$' + numberWithCommas(full.Price);
                                             
                                             contentItem += '<div class="pdf-price-box">';
                                             contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                             contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Venta</div>';
                                             contentItem += '</div>';
-                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
-                                            contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                            if (bIncludeService == 'yes') {
+                                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                            }
                                             
                                             
                                         }
@@ -1054,12 +1067,14 @@ function renderModalTB() {
                                 if (Number(full.Price) != 0) {
                                     var price_unit = 'USD';
                                     var price = '$' + numberWithCommas(full.Total);
+                                    if (bIncludeService == 'no')
+                                        price = '$' + numberWithCommas(full.Price);
                                     
                                     contentItem += '<div class="pdf-price-box">';
                                     contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                     contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">¡Con Puja Máxima!</div>';
                                     contentItem += '</div>';
-                                    if (full.Auctioneer != 'Other') {
+                                    if (full.Auctioneer != 'Other' && bIncludeService ==  'yes') {
                                         contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios con una puja máxima en ' + numberWithCommas(full.Price) + ' USD</span><br>';
                                         contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
                                     }
@@ -1069,15 +1084,18 @@ function renderModalTB() {
                             
                                 var price_unit = 'USD';
                                 var price = '$' + numberWithCommas(full.Total);
+                                if (bIncludeService == 'no')
+                                    price = '$' + numberWithCommas(full.Price);
                                 
                                 contentItem += '<div class="pdf-price-box">';
                                 contentItem += '<div class="pdf-total-price"><span class="price-unit">' + price_unit + '</span><span class="price">' + price + '</span></div>';
                                 contentItem += '<div class="pdf-price-arrow"></div><div class="deal_buy_type">$ Venta</div>';
                                 contentItem += '</div>';
                                 
-                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
-                                contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
-                                
+                                if (bIncludeService == 'yes') {
+                                    contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: 4px;">*Total aproximado incluyendo servicios</span><br>';
+                                    contentItem += '<span style="font-size: 7px;color: black;font-weight: bold; display: block; margin-top: -20px;">*Precio no Incluye I.V.A.</span>';
+                                }
                                 
                             }
 

@@ -520,6 +520,29 @@ header('Expires: 0');
         </div>
     </div>
 
+    <div class="modal fade " id="includeServiceModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width: 1200px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="myLargeModalLabel"><?php echo lang('Catalog');?></h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="font-size: 15px; color: black; padding-left: 30px;">
+                        Include Service?
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-round btn-default" onclick="includeService('no')"><?php echo lang('NO');?></button>
+                    <button type="button" class="btn btn-round btn-primary" onclick="includeService('yes')"><?php echo lang('YES');?></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade " id="closeAuctionModal" tabindex="-1" role="dialog" aria-labelledby="closeAuctionLabel" aria-hidden="true">
         <div class="modal-dialog" style="width: 850px; max-width : 850px;">
             <div class="modal-content">
