@@ -1619,6 +1619,7 @@ button#generateLinkBbt:hover {
 }
 .modal, .modal-open {
     overflow-x: auto !important;
+    overflow-y: auto;
 }
 
 /* #left-sidebar .sidebar-logo-title {
