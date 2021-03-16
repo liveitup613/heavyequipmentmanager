@@ -2487,7 +2487,7 @@ function getCheckedValue(val, type = '') {
     if (type == 'mail') {
         var gmail_link = '';
         if(val != '') {
-            gmail_link = '<a class="contact-link" href="javascript:void(0);" onclick="SendViaGmail(\'' + val +'\')"><img class="publish-icon" src="/assets/images/publish_icon/Gmail_icon.png"></a>';
+            gmail_link = '<a class="contact-link" href="javascript:void(0);" onclick="SendViaGmail(\'' + val +'\')"><img class="publish-icon" src="' + base_url + 'assets/images/publish_icon/Gmail_icon.png"></a>';
             val = getLocalizationWord(val) + gmail_link + '<br>';
         }
     } else {

@@ -229,10 +229,10 @@ var columnData = [
 
             var whatsapp_link = '';
             if(full.Phone) {                
-                whatsapp_link = '<a class="contact-link" href="javascript:void(0);" onclick="SendViaWhatsapp(\'' + full.Phone + '\');"><img class="publish-icon" src="/assets/images/publish_icon/WhatsApp_icon.png"></a>';
+                whatsapp_link = '<a class="contact-link" href="javascript:void(0);" onclick="SendViaWhatsapp(\'' + full.Phone + '\');"><img class="publish-icon" src="' + base_url + 'assets/images/publish_icon/WhatsApp_icon.png"></a>';
             }
 
-            var google_contact = '<a class="contact-link" href="javascript:void(0);" onclick="AddGoogleContact(' + full.CustomerID + ');"><img class="publish-icon" src="/assets/images/publish_icon/google_contact.png"></a>';
+            var google_contact = '<a class="contact-link" href="javascript:void(0);" onclick="AddGoogleContact(' + full.CustomerID + ');"><img class="publish-icon" src="' + base_url + 'assets/images/publish_icon/google_contact.png"></a>';
 
             return  full.Name + ' ' + 
                     full.LastName + google_contact + '<br>' + 
