@@ -956,8 +956,10 @@ function renderModalTB() {
                                     else {   // rest pages
                                         // add first page gallery
                                         contentItem += '<div class="rest-pdf-page-gallery-container">';
-                                        for (var m = 0; m < images_for_rest_page.length; m++) {
+                                        image_on_page_count = 0;
+                                        for (var m = (i - 1) * 6; m < images_for_rest_page.length; m++) {
 
+                                            image_on_page_count ++;          
                                             var imageItem = images_for_rest_page[m];
 
                                             $imgUrl = imageItem.url;
@@ -969,6 +971,8 @@ function renderModalTB() {
                                                 '<img  src="' + $imgUrl + '" style="width: ' + width + 'px; height: ' + height + 'px; position:absolute; top:0; left: 50%; margin-left:' + (-1 * width / 2) + 'px;" >' +                                                
                                                 '</div>' +
                                                 '</div>';
+                                            if (image_on_page_count == 6)
+                                                break;
                                         }
                                         contentItem += '</div>';
 
