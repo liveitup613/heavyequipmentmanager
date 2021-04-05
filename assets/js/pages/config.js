@@ -442,9 +442,9 @@ var Special_field_array = [
     },
     {
         category: 'Platform Truck',
-        equip_info_fields: ['EqYear', 'EqMake', 'EqModel', 'EqSN', 'Length'],
+        equip_info_fields: [],
         has_truck_info: true,
-        title: ['TruckYear', 'TruckMake', 'Length'],
+        title: ['TruckYear', 'TruckMake', 'TruckModel'],
         details: ['TruckTrans', 'Suspension', 'TruckCondition'],
         unit: {}
     },
