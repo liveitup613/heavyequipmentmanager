@@ -159,6 +159,8 @@ class Deal_model extends CI_Model
                 $this->db->or_like('viewActiveDeals.DealID', $word);
                 $this->db->or_like('viewActiveDeals.Type', $word);
                 $this->db->or_like('viewActiveDeals.Hours', $word);
+                $this->db->or_like('viewActiveDeals.mkTitle', $word);
+                $this->db->or_like('viewActiveDeals.mkDescription', $word);
                 if (strripos('Cabin', $word) !== false)
                     $this->db->or_like('viewActiveDeals.Cab', 2);
                 if (strripos('4WD', $word) !== false)
