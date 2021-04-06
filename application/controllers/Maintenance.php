@@ -508,6 +508,9 @@ class Maintenance extends CI_Controller
         $PrimaryImageUrl = $this->input->post('primaryImageUrl');        
         $fileFilter = explode('.', $PrimaryImageUrl);
         $fileExt = $fileFilter[count($fileFilter) - 1];
+        $question_mark_position = strpos($fileExt, '?');
+        if ($question_mark_position !== FALSE)
+            $fileExt = substr($fileExt, 0, $question_mark_position);
         
         $date = new DateTime();
         $filename = $date->getTimestamp();
@@ -550,6 +553,9 @@ class Maintenance extends CI_Controller
 
             $fileFilter = explode('.', $sliderImageUrl);
             $fileExt = $fileFilter[count($fileFilter) - 1];
+            $question_mark_position = strpos($fileExt, '?');
+            if ($question_mark_position !== FALSE)
+                $fileExt = substr($fileExt, 0, $question_mark_position);
     
             $date = new DateTime();
             $filename = $date->getTimestamp();
