@@ -551,6 +551,9 @@ class Maintenance extends CI_Controller
             if ($sliderImageUrl == '' || $sliderImageUrl == $PrimaryImageUrl)
                 continue;
 
+            if (substr($sliderImageUrl, 0, 4) != 'http')
+                continue;
+
             $fileFilter = explode('.', $sliderImageUrl);
             $fileExt = $fileFilter[count($fileFilter) - 1];
             $question_mark_position = strpos($fileExt, '?');
@@ -565,9 +568,17 @@ class Maintenance extends CI_Controller
             $destUrl = 'assets/images/sliderImages/' . $filename;
     
             // File Upload
-    
-            $image_content = file_get_contents($sliderImageUrl);
-            file_put_contents($destUrl, $image_content);
+
+            try{
+                $image_content = file_get_contents($sliderImageUrl);
+                file_put_contents($destUrl, $image_content);
+            }
+            catch (Exception $e) {
+                $this->db->where('ID', $getID);
+                $this->db->delete('tblDeals');
+                echo json_encode(array('success' => false));
+                return;
+            }
     
             //get image size
             $image = imagecreatefromstring($image_content);
@@ -630,6 +641,20 @@ class Maintenance extends CI_Controller
             ));
             return;
         }
+
+        echo json_encode(array(
+            'success' => true
+        ));
+    }
+
+    public function updateDeal() {
+        $ID = $this->input->post('ID');
+        $EndDate = $this->input->post('EndDate');
+
+        $this->db->where('ID', $ID);
+        $this->db->update('tblDeals', array(
+            'EndDate' => $EndDate
+        ));
 
         echo json_encode(array(
             'success' => true
