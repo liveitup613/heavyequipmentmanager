@@ -522,24 +522,32 @@ class Maintenance extends CI_Controller
 
         // File Upload
 
-        $image_content = file_get_contents($PrimaryImageUrl);
-        file_put_contents($destUrl, $image_content);
-        file_put_contents($thumbUrl, $image_content);
-        $this->resizeImage($thumbUrl, 0, 150, true);
+        try {
+            $image_content = file_get_contents($PrimaryImageUrl);
+            file_put_contents($destUrl, $image_content);
+            file_put_contents($thumbUrl, $image_content);
+            $this->resizeImage($thumbUrl, 0, 150, true);
 
-        //get image size
-        $image = imagecreatefromstring($image_content);
-        $width = imagesx($image);
-        $height = imagesy($image);
+            //get image size
+            $image = imagecreatefromstring($image_content);
+            $width = imagesx($image);
+            $height = imagesy($image);
 
-        $AuctionUpdateData = array(
-            "PrimaryImage" => $filename,
-            "pmW" => $width,
-            "pmH" => $height
-        );
+            $AuctionUpdateData = array(
+                "PrimaryImage" => $filename,
+                "pmW" => $width,
+                "pmH" => $height
+            );
 
-        $this->db->where('ID', $getID);
-        $this->db->update('tblDeals', $AuctionUpdateData);
+            $this->db->where('ID', $getID);
+            $this->db->update('tblDeals', $AuctionUpdateData);
+        }
+        catch (Exception $e) {
+            $this->db->where('ID', $getID);
+            $this->db->delete('tblDeals');
+            echo json_encode(array('success' => false));
+            return;
+        }
 
         // Add 10 Scrapped Photos 
 
