@@ -523,7 +523,13 @@ class Maintenance extends CI_Controller
         // File Upload
 
         try {
-            $image_content = file_get_contents($PrimaryImageUrl);
+            $image_content = @file_get_contents($PrimaryImageUrl);
+            if ($image_content ===  FALSE) {
+                $this->db->where('ID', $getID);
+                $this->db->delete('tblDeals');
+                echo json_encode(array('success' => false));
+                return;
+            }
             file_put_contents($destUrl, $image_content);
             file_put_contents($thumbUrl, $image_content);
             $this->resizeImage($thumbUrl, 0, 150, true);
@@ -578,7 +584,13 @@ class Maintenance extends CI_Controller
             // File Upload
 
             try{
-                $image_content = file_get_contents($sliderImageUrl);
+                $image_content = @file_get_contents($sliderImageUrl);
+                if ($image_content === FALSE) {
+                    $this->db->where('ID', $getID);
+                    $this->db->delete('tblDeals');
+                    echo json_encode(array('success' => false));
+                    return;
+                }
                 file_put_contents($destUrl, $image_content);
             }
             catch (Exception $e) {
